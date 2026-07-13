@@ -1,0 +1,15 @@
+<div class="page-404">
+  <img
+    aria-labelledby="not-found-page-heading"
+    class="page-404__img"
+    src="{{ router.url === '/error' ? errorImg : pageNotFoundImg }}"
+    alt=""
+  />
+  <h1 id="not-found-page-heading" class="page-404__heading">
+    {{ router.url === '/error' ? errorHeading : pageNotFoundHeading }}
+  </h1>
+  <p class="page-404__para">{{ router.url === '/error' ? errorPara : pageNotFoundPara }}</p>
+  <button mat-raised-button color="primary" class="page-404__btn" (click)="handleClick()">
+    Go Back Home
+  </button>
+</div>

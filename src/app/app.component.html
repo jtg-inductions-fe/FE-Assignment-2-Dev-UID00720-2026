@@ -1,5 +1,7 @@
-<div>
-  <p>base setup</p>
-  <button mat-raised-button color="primary"> <mat-icon>bar_chart</mat-icon> Primary</button>
-  <button mat-stroked-button color="primary">Primary</button>
+<div class="layout-container">
+  <app-header></app-header>
+  <app-side-nav></app-side-nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 </div>
