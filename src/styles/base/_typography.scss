@@ -9,6 +9,11 @@ h1 {
   font-weight: 700;
   letter-spacing: 0;
 }
+h2 {
+  font-size: f.rem(20);
+  font-weight: 700;
+  letter-spacing: 0;
+}
 p {
   font-size: f.rem(14);
   font-weight: 500;
@@ -17,7 +22,7 @@ p {
   color: #00000099;
 }
 button {
-  font-size: 14px;
+  font-size: f.rem(14);
 }
 
 @include m.for-device-width('sd') {

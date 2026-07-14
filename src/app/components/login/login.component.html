@@ -1,1 +1,34 @@
-<p>login works!</p>
+<mat-card>
+  <mat-card-content>
+    <form class="form" [formGroup]="userForm" (ngSubmit)="submitForm()">
+      <h2 class="form__heading">Restaurant Portal</h2>
+      <p class="form__desc">Log in to manage orders, menus, and stats.</p>
+
+      <mat-form-field appearance="outline" class="form__input">
+        <mat-label>Email Address</mat-label>
+        <input matInput placeholder="Enter email address" formControlName="email" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form__input">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          matInput
+          placeholder="Enter password"
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary" class="form__btn">Login</button>
+    </form>
+  </mat-card-content>
+</mat-card>
