@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '@/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +11,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   hide = true;
   userForm!: FormGroup;
+  private router = inject(Router);
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) {
     this.userForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -18,7 +24,24 @@ export class LoginComponent {
   }
   submitForm() {
     if (this.userForm.valid) {
-      console.log(this.userForm.value);
+      const { email, password } = this.userForm.value;
+
+      this.authService.login(email, password).subscribe({
+        next: userApiResponse => {
+          if (userApiResponse.status && userApiResponse.email && userApiResponse.role) {
+            localStorage.setItem('email', userApiResponse.email);
+            localStorage.setItem('role', userApiResponse.role);
+            this.router.navigate(['/dashboard']);
+          } else {
+            alert('invalid credentials');
+          }
+        },
+        error: err => {
+          alert(err.errorMessage);
+        },
+      });
+    } else {
+      alert('Invalid Form');
     }
   }
 }
