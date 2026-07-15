@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '@/services/auth.service';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   hide = true;
   userForm!: FormGroup;
   private router = inject(Router);
@@ -22,15 +22,20 @@ export class LoginComponent {
       password: ['', Validators.required],
     });
   }
+
+  ngOnInit(): void {
+    if (this.authService.isLoggedIn$) {
+      this.router.navigate(['/dashboard']);
+    }
+  }
+
   submitForm() {
     if (this.userForm.valid) {
       const { email, password } = this.userForm.value;
 
       this.authService.login(email, password).subscribe({
         next: userApiResponse => {
-          if (userApiResponse.status && userApiResponse.email && userApiResponse.role) {
-            localStorage.setItem('email', userApiResponse.email);
-            localStorage.setItem('role', userApiResponse.role);
+          if (userApiResponse.status) {
             this.router.navigate(['/dashboard']);
           } else {
             alert('invalid credentials');
