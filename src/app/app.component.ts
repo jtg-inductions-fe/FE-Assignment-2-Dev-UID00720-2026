@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,14 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  isLoggedIn$!: Observable<boolean>;
-
   constructor(private authService: AuthService) {}
 
+  public userLoggedIn = false;
+
   ngOnInit() {
-    this.isLoggedIn$ = this.authService.isLoggedIn$;
+    this.authService.isLoggedIn$.subscribe(loginStatus => {
+      this.userLoggedIn = loginStatus.status;
+    });
   }
   title = 'assignment2';
 }

@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '@/services/auth.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +9,18 @@ import { Observable } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
   private router = inject(Router);
-  private rawUserData = localStorage.getItem('user');
-  public userData;
-  isLoggedIn$!: Observable<boolean>;
+  public userLoggedIn = false;
+  public userName? = '';
+  public userEmail? = '';
 
-  constructor(private authService: AuthService) {
-    if (this.rawUserData !== null) this.userData = JSON.parse(this.rawUserData);
-  }
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.isLoggedIn$ = this.authService.isLoggedIn$;
+    this.authService.isLoggedIn$.subscribe(loginStatus => {
+      this.userLoggedIn = loginStatus.status;
+      this.userName = loginStatus.name;
+      this.userEmail = loginStatus.email;
+    });
   }
 
   logout(): void {

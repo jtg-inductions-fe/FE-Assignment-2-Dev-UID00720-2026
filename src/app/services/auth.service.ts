@@ -14,17 +14,25 @@ export interface UserApiResponse {
   status: boolean;
   message: string;
 }
+export interface LoggedInDeatils {
+  status: boolean;
+  name?: string;
+  email?: string;
+  role?: string;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
-
+  private rawData = localStorage.getItem('user');
+  private userDataLocalStorage = this.rawData ? JSON.parse(this.rawData) : null;
   private usersUrl = 'assets/db/users.json';
-  private isLoggedInSubject = new BehaviorSubject<boolean>(Boolean(localStorage.getItem('user')));
 
-  isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
+  private isLoggedInSubject = new BehaviorSubject<LoggedInDeatils>(this.userDataLocalStorage);
+  isLoggedIn$: Observable<LoggedInDeatils> = this.isLoggedInSubject.asObservable();
+
+  constructor(private http: HttpClient) {}
 
   private getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);
@@ -41,16 +49,14 @@ export class AuthService {
             message: 'invalid credentials',
           };
         }
-
-        localStorage.setItem(
-          'user',
-          JSON.stringify({
-            name: user.name,
-            email: user.email,
-            role: user.role,
-          })
-        );
-        this.isLoggedInSubject.next(true);
+        const loginStatus = {
+          status: true,
+          name: user.name,
+          email: user.email,
+          role: user.role,
+        };
+        localStorage.setItem('user', JSON.stringify(loginStatus));
+        this.isLoggedInSubject.next(loginStatus);
 
         return {
           status: Boolean(user),
@@ -62,6 +68,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('user');
-    this.isLoggedInSubject.next(false);
+    this.isLoggedInSubject.next({ status: false });
   }
 }

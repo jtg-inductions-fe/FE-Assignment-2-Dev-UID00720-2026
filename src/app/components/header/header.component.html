@@ -1,11 +1,11 @@
 <header class="header">
   <a href="/dashboard" class="app-logo"><img src="assets/app-logo.svg" alt="app logo" /></a>
-  <button [matMenuTriggerFor]="menu" *ngIf="isLoggedIn$ | async">
+  <button [matMenuTriggerFor]="menu" *ngIf="userLoggedIn">
     <app-profile src="assets/profile.svg"></app-profile>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>{{ userData?.name }}</button>
-    <button mat-menu-item>{{ userData?.email }}</button>
+    <button mat-menu-item>{{ userName }}</button>
+    <button mat-menu-item>{{ userEmail }}</button>
     <button mat-menu-item class="logout-btn" (click)="logout()">logout</button>
   </mat-menu>
 </header>
