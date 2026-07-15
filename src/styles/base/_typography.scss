@@ -23,6 +23,7 @@ p {
 }
 button {
   font-size: f.rem(14);
+  cursor: pointer;
 }
 
 @include m.for-device-width('sd') {

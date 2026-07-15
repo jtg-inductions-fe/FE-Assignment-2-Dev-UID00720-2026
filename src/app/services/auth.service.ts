@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 export interface User {
   id: string;
+  name: string;
   email: string;
   password: string;
   role: string;
@@ -21,7 +22,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   private usersUrl = 'assets/db/users.json';
-  private isLoggedInSubject = new BehaviorSubject<boolean>(Boolean(localStorage.getItem('email')));
+  private isLoggedInSubject = new BehaviorSubject<boolean>(Boolean(localStorage.getItem('user')));
 
   isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
@@ -41,8 +42,14 @@ export class AuthService {
           };
         }
 
-        localStorage.setItem('email', user.email);
-        localStorage.setItem('role', user.role);
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            name: user.name,
+            email: user.email,
+            role: user.role,
+          })
+        );
         this.isLoggedInSubject.next(true);
 
         return {
@@ -54,7 +61,7 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('email');
+    localStorage.removeItem('user');
     this.isLoggedInSubject.next(false);
   }
 }
