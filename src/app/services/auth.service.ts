@@ -9,7 +9,7 @@ export interface User {
   password: string;
   role: string;
 }
-export interface userApiResponse {
+export interface UserApiResponse {
   status: boolean;
   message: string;
 }
@@ -20,7 +20,7 @@ export interface userApiResponse {
 export class AuthService {
   constructor(private http: HttpClient) {}
 
-  private usersUrl = '../../assets/db/users.json';
+  private usersUrl = 'assets/db/users.json';
   private isLoggedInSubject = new BehaviorSubject<boolean>(Boolean(localStorage.getItem('email')));
 
   isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
@@ -29,7 +29,7 @@ export class AuthService {
     return this.http.get<User[]>(this.usersUrl);
   }
 
-  login(email: string, password: string): Observable<userApiResponse> {
+  login(email: string, password: string): Observable<UserApiResponse> {
     return this.getUsers().pipe(
       map(users => {
         const user = users.find(u => u.email === email && u.password === password);
