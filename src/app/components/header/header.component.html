@@ -1,6 +1,20 @@
 <header class="header">
   <a href="/dashboard" class="app-logo"><img src="assets/app-logo.svg" alt="app logo" /></a>
-  <button [matMenuTriggerFor]="menu" *ngIf="userLoggedIn">
+  <a *ngIf="!userLoggedIn" href="/dashboard" class="app-logo-mobile"
+    ><img src="assets/app-logo.svg" alt="app logo"
+  /></a>
+
+  <button
+    type="button"
+    aria-label="hamburger"
+    class="hamburger"
+    *ngIf="userLoggedIn"
+    (click)="toggleSidenav()"
+  >
+    <img src="assets/hamburger-icon.svg" alt="" />
+  </button>
+
+  <button type="button" [matMenuTriggerFor]="menu" *ngIf="userLoggedIn">
     <app-profile src="assets/profile.svg"></app-profile>
   </button>
   <mat-menu #menu="matMenu">

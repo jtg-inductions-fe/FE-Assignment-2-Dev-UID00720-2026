@@ -13,8 +13,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(loginStatus => {
-      this.userLoggedIn = loginStatus.status;
+      this.userLoggedIn = loginStatus?.status;
     });
   }
-  title = 'assignment2';
 }

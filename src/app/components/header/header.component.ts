@@ -17,14 +17,19 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(loginStatus => {
-      this.userLoggedIn = loginStatus.status;
-      this.userName = loginStatus.name;
-      this.userEmail = loginStatus.email;
+      this.userLoggedIn = loginStatus?.status;
+      this.userName = loginStatus?.name;
+      this.userEmail = loginStatus?.email;
     });
   }
 
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  toggleSidenav() {
+    const sidenav = document.querySelector('app-side-nav');
+    sidenav?.classList.toggle('show');
   }
 }
