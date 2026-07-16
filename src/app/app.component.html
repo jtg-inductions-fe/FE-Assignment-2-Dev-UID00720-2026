@@ -1,6 +1,9 @@
 <div class="layout-container">
   <app-header></app-header>
-  <app-side-nav *ngIf="userLoggedIn"></app-side-nav>
+  <app-side-nav
+    *ngIf="(isLoggedIn$ | async)?.status"
+    [class.show]="isSidenavOpen$ | async"
+  ></app-side-nav>
   <main>
     <router-outlet></router-outlet>
   </main>

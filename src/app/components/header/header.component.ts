@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { AuthService } from '@/services/auth.service';
+import { AuthService } from '@/services/auth/auth.service';
 import { Router } from '@angular/router';
+import { SidenavStateService } from '@/services/sidenav-state/sidenav-state.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,10 @@ export class HeaderComponent implements OnInit {
   public userName? = '';
   public userEmail? = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private sidenavService: SidenavStateService
+  ) {}
 
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(loginStatus => {
@@ -29,7 +33,6 @@ export class HeaderComponent implements OnInit {
   }
 
   toggleSidenav() {
-    const sidenav = document.querySelector('app-side-nav');
-    sidenav?.classList.toggle('show');
+    this.sidenavService.toggle();
   }
 }
