@@ -7,11 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SideNavComponent } from './components/side-nav/side-nav.component';
-import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
+import { HeaderComponent } from './core/components/header/header.component';
+import { SideNavComponent } from './core/components/side-nav/side-nav.component';
+import { LoginComponent } from './features/auth/login/login.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
