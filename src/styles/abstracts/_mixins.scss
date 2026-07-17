@@ -1,8 +1,7 @@
 @use './variables' as v;
-// --- Mixins ---
+
 @mixin for-device-width($width) {
   $value: map-get(v.$breakpoints, $width);
-  // Check if the key exists in the map
   @if $value == null {
     @error "Invalid breakpoint '#{$width}'. Expected one of: #{map-keys($breakpoints)}.";
   }
@@ -11,3 +10,12 @@
     @content;
   }
 }
+
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}   
