@@ -5,11 +5,11 @@
   display: flex;
   flex-direction: column;
   app-header {
-    border-bottom: 1px solid v.$grey;
+    border: 1px solid v.$grey;
   }
   app-side-nav {
     display: none;
-    border-right: 1px solid v.$grey;
+    border: 1px solid v.$grey;
     width: 250px;
     height: calc(100vh - 68px);
     position: absolute;

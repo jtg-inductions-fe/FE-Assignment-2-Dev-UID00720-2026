@@ -19,6 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatTreeModule} from '@angular/material/tree';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { MatMenuModule } from '@angular/material/menu';
     ReactiveFormsModule,
     HttpClientModule,
     MatMenuModule,
+    MatTreeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
