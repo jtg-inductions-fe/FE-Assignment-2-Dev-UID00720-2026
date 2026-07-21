@@ -6,7 +6,11 @@
 
       <mat-form-field appearance="outline" class="form__input">
         <mat-label>Email Address</mat-label>
-        <input matInput placeholder="Enter email address" formControlName="email" />
+        <input
+          matInput
+          placeholder="Enter email address"
+          formControlName="email"
+        />
       </mat-form-field>
       <mat-form-field appearance="outline" class="form__input">
         <mat-label>Password</mat-label>
@@ -28,7 +32,9 @@
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
       </mat-form-field>
-      <button type="submit" mat-raised-button color="primary" class="form__btn">Login</button>
+      <button type="submit" mat-raised-button color="primary" class="form__btn">
+        Login
+      </button>
     </form>
   </mat-card-content>
 </mat-card>

@@ -1,14 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { authGuard } from './guards/auth.guard';
+import { authGuard } from '@core/guards/auth.guard';
 
+import { FailurePageComponent } from '@core/components/failure-page/failure-page.component';
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard] },
-  { path: '**', component: PageNotFoundComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import('@features/auth/auth.module').then(m => m.AuthModule),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('@features/dashboard/dashboard.module').then(
+        m => m.DashboardModule
+      ),
+    canActivate: [authGuard],
+  },
+  { path: '**', component: FailurePageComponent },
 ];
 
 @NgModule({

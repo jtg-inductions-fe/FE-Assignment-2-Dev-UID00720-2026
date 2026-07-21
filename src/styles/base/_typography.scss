@@ -1,33 +1,35 @@
-@use '../abstracts/mixins' as m;
-@use '../abstracts/functions' as f;
+@use 'abstracts/mixins' as m;
+@use 'abstracts/functions' as f;
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
 }
 h1 {
-  font-size: f.rem(30);
+  font-size: f.px-to-rem(30);
   font-weight: 700;
   letter-spacing: 0;
 }
 h2 {
-  font-size: f.rem(20);
+  font-size: f.px-to-rem(20);
   font-weight: 700;
   letter-spacing: 0;
 }
 p {
-  font-size: f.rem(14);
+  font-size: f.px-to-rem(14);
   font-weight: 500;
   letter-spacing: 0;
   line-height: 20px;
   color: #00000099;
 }
 button {
-  font-size: f.rem(14);
+  border: none;
+  background-color: transparent;
+  font-size: f.px-to-rem(14);
   cursor: pointer;
 }
 
 @include m.for-device-width('sd') {
   h1 {
-    font-size: f.rem(48);
+    font-size: f.px-to-rem(48);
   }
 }

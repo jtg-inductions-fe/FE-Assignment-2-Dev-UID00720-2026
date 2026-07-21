@@ -1,12 +1,14 @@
-@use '../styles/abstracts/mixins' as m;
-@use '../styles/abstracts/variables' as v;
+@use 'abstracts/mixins' as m;
+@use 'abstracts/variables' as v;
 
 .layout-container {
   display: flex;
   flex-direction: column;
+
   app-header {
     border-bottom: 1px solid v.$grey;
   }
+
   app-side-nav {
     display: none;
     border-right: 1px solid v.$grey;
@@ -16,16 +18,15 @@
     z-index: 2;
     top: 68px;
   }
+
   main {
     padding: 10px;
   }
   .show {
     display: block;
   }
-}
 
-@include m.for-device-width('sd') {
-  .layout-container {
+  @include m.for-device-width('sd') {
     display: grid;
     height: 100vh;
     grid-template-areas:
@@ -37,20 +38,20 @@
     app-header {
       grid-area: header;
     }
+
     app-side-nav {
       grid-area: sidenav;
       display: block;
       position: static;
     }
+
     main {
       grid-area: main;
       overflow: auto;
     }
   }
-}
 
-@include m.for-device-width('lg') {
-  .layout-container {
+  @include m.for-device-width('lg') {
     max-width: 1860px;
     margin: auto;
   }
