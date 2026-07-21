@@ -1,6 +1,6 @@
-@use '../../../styles/abstracts/mixins' as m;
+@use 'abstracts/mixins' as m;
 
-.page-404 {
+.failure-component {
   text-align: center;
   &__img {
     margin: 30px 0;
@@ -14,7 +14,7 @@
 }
 
 @include m.for-device-width('sd') {
-  .page-404 {
+  .failure-component {
     &__img {
       height: 60vh;
       max-width: 800px;

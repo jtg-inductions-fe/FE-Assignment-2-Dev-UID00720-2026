@@ -1,13 +1,26 @@
 @use './variables' as v;
-// --- Mixins ---
+
+/// Generates a media query for a specific device width breakpoint.
+/// @param {String} $width - The key name of the breakpoint
+/// @throw {Error} If the breakpoint key is not found in `v.$breakpoints`.
 @mixin for-device-width($width) {
   $value: map-get(v.$breakpoints, $width);
-  // Check if the key exists in the map
-  @if $value == null {
-    @error "Invalid breakpoint '#{$width}'. Expected one of: #{map-keys($breakpoints)}.";
+  @if not $value {
+    @error "Invalid breakpoint '#{$width}'. Expected one of: #{map-keys(v.$breakpoints)}.";
   }
 
   @media screen and (min-width: $value) {
     @content;
   }
+}
+
+/// Truncates multi-line text to a specific number of lines with an ellipsis.
+/// @param {Number} $lines - The maximum number of lines to display before truncation.
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

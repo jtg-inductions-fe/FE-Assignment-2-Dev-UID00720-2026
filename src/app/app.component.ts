@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './services/auth.service';
+import { AuthService } from '@core/services/auth.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -15,5 +15,4 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn$;
   }
-  title = 'assignment2';
 }

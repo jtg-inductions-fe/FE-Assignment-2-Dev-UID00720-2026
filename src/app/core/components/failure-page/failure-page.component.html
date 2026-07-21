@@ -1,0 +1,21 @@
+<div class="failure-component">
+  <img
+    class="failure-component__img"
+    [src]="router.url === '/error' ? errorImg : pageNotFoundImg"
+    alt="decorative image"
+  />
+  <h1 class="failure-component__heading">
+    {{ router.url === '/error' ? errorHeading : pageNotFoundHeading }}
+  </h1>
+  <p class="failure-component__para">
+    {{ router.url === '/error' ? errorPara : pageNotFoundPara }}
+  </p>
+  <button
+    mat-raised-button
+    color="primary"
+    class="page-404__btn"
+    (click)="navigateToDashboard()"
+  >
+    Go Back Home
+  </button>
+</div>

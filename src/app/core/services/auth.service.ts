@@ -21,7 +21,9 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   private usersUrl = 'assets/db/users.json';
-  private isLoggedInSubject = new BehaviorSubject<boolean>(Boolean(localStorage.getItem('email')));
+  private isLoggedInSubject = new BehaviorSubject<boolean>(
+    Boolean(localStorage.getItem('email'))
+  );
 
   isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
@@ -32,7 +34,9 @@ export class AuthService {
   login(email: string, password: string): Observable<UserApiResponse> {
     return this.getUsers().pipe(
       map(users => {
-        const user = users.find(u => u.email === email && u.password === password);
+        const user = users.find(
+          u => u.email === email && u.password === password
+        );
 
         if (!user) {
           return {
