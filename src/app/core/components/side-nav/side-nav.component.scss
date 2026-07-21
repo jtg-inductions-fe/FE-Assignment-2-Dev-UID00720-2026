@@ -1,4 +1,4 @@
-@use './../../../styles/abstracts/variables' as v;
+@use 'abstracts/variables' as v;
 
 .example-tree-invisible {
   display: none;
@@ -14,7 +14,7 @@
 /*
  * This padding sets alignment of the nested nodes.
  */
-.example-tree .mat-nested-tree-node div[role=group] {
+.example-tree .mat-nested-tree-node div[role='group'] {
   padding-left: 15px;
 }
 
@@ -23,37 +23,37 @@
  * Leaf nodes need to have padding so as to align with other non-leaf nodes
  * under the same parent.
  */
-.example-tree div[role=group] > .mat-tree-node {
+.example-tree div[role='group'] > .mat-tree-node {
   padding-left: 15px;
 }
 
-.mat-tree-node{
+.mat-tree-node {
   padding-left: 15px;
   font-weight: 500;
 }
 
-.active-link-class{
+.active-link-class {
   color: v.$primary-color;
 }
 
-mat-divider{
+mat-divider {
   margin: 20px 0;
 }
 
-.nav-links{
+.nav-links {
   display: flex;
   align-items: center;
 }
 
-.side-nav-icons{
+.side-nav-icons {
   margin-right: 10px;
 }
 
-.side-nav-footer{
+.side-nav-footer {
   position: fixed;
   bottom: 0;
   margin: 0 60px;
-  mat-icon{
+  mat-icon {
     margin: 10px;
   }
 }

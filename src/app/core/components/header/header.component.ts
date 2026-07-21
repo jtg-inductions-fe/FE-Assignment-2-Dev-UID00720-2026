@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { AuthService } from '@/services/auth/auth.service';
+import { AuthService } from '@core/services/auth/auth.service';
 import { Router } from '@angular/router';
-import { SidenavStateService } from '@/services/sidenav-state/sidenav-state.service';
+import { SidenavStateService } from '@core/services/sidenav-state/sidenav-state.service';
 
 @Component({
   selector: 'app-header',

@@ -2,9 +2,9 @@
   <app-header></app-header>
   <app-side-nav
     *ngIf="(isLoggedIn$ | async)?.status"
-    [class.show]="isSidenavOpen$ | async"
+    [class.show-side-nav]="isSidenavOpen$ | async"
   ></app-side-nav>
   <main>
-    <router-outlet></router-outlet>
+    <router-outlet [class.hide-bg]="isSidenavOpen$ | async"></router-outlet>
   </main>
 </div>

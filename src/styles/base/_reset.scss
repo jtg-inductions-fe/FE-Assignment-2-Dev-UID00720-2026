@@ -1,17 +1,19 @@
-* {
-  margin: 0px;
-  padding: 0px;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  a {
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-  }
-  li {
-    list-style-type: none;
-  }
-  button {
-    border: none;
-    background-color: transparent;
-  }
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
 }

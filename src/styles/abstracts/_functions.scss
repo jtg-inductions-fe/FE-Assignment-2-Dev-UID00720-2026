@@ -1,5 +1,7 @@
 @use 'sass:math';
 
-@function rem($px) {
+/// @param {Number} $px - The pixel value to convert
+/// @return {Number} The calculated value in 'rem' units.
+@function px-to-rem($px) {
   @return math.div($px, 16) * 1rem;
 }

@@ -1,56 +1,62 @@
-@use '../styles/abstracts/mixins' as m;
-@use '../styles/abstracts/variables' as v;
+@use 'abstracts/mixins' as m;
+@use 'abstracts/variables' as v;
 
 .layout-container {
   display: flex;
   flex-direction: column;
+
   app-header {
     border: 1px solid v.$grey;
   }
+
   app-side-nav {
     display: none;
     border: 1px solid v.$grey;
-    width: 250px;
-    height: calc(100vh - 68px);
+    background-color: v.$white;
+    width: v.$side-nav-width;
+    height: calc(100vh - v.$header-height);
     position: absolute;
-    z-index: 2;
-    top: 68px;
+    z-index: 3;
+    top: v.$header-height;
   }
-  main {
-    padding: 10px;
-  }
-  .show {
+  .show-side-nav {
     display: block;
   }
-}
+  .hide-bg {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - v.$header-height);
+    z-index: 2;
+    background-color: v.$grey;
+    backdrop-filter: blur(10px);
+  }
 
-@include m.for-device-width('sd') {
-  .layout-container {
+  @include m.for-device-width('sd') {
     display: grid;
     height: 100vh;
     grid-template-areas:
       'header header'
       'sidenav main';
-    grid-template-rows: 68px 1fr;
-    grid-template-columns: 250px 1fr;
+    grid-template-rows: v.$header-height 1fr;
+    grid-template-columns: v.$side-nav-width 1fr;
 
     app-header {
       grid-area: header;
     }
+
     app-side-nav {
       grid-area: sidenav;
       display: block;
       position: static;
     }
+
     main {
       grid-area: main;
       overflow: auto;
     }
   }
-}
 
-@include m.for-device-width('lg') {
-  .layout-container {
+  @include m.for-device-width('lg') {
     max-width: 1860px;
     margin: auto;
   }

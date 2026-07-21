@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { SidenavStateService } from '@core/services/sidenav-state/sidenav-state.service';
 
 export interface User {
   id: string;
@@ -28,11 +29,16 @@ export class AuthService {
   private rawData = localStorage.getItem('user');
   private userDataLocalStorage = this.rawData ? JSON.parse(this.rawData) : null;
   private usersUrl = 'assets/db/users.json';
+  private isLoggedInSubject = new BehaviorSubject<LoggedInDeatils>(
+    this.userDataLocalStorage
+  );
+  isLoggedIn$: Observable<LoggedInDeatils> =
+    this.isLoggedInSubject.asObservable();
 
-  private isLoggedInSubject = new BehaviorSubject<LoggedInDeatils>(this.userDataLocalStorage);
-  isLoggedIn$: Observable<LoggedInDeatils> = this.isLoggedInSubject.asObservable();
-
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private sidenavService: SidenavStateService
+  ) {}
 
   private getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);
@@ -41,7 +47,9 @@ export class AuthService {
   login(email: string, password: string): Observable<UserApiResponse> {
     return this.getUsers().pipe(
       map(users => {
-        const user = users.find(u => u.email === email && u.password === password);
+        const user = users.find(
+          u => u.email === email && u.password === password
+        );
 
         if (!user) {
           return {
@@ -68,6 +76,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('user');
+    this.sidenavService.setOpen(false);
     this.isLoggedInSubject.next({ status: false });
   }
 }

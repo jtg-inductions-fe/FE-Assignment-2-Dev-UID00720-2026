@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from './services/auth/auth.service';
-import { SidenavStateService } from './services/sidenav-state/sidenav-state.service';
+import { AuthService } from '@core/services/auth/auth.service';
+import { SidenavStateService } from '@core/services/sidenav-state/sidenav-state.service';
 
 @Component({
   selector: 'app-root',
