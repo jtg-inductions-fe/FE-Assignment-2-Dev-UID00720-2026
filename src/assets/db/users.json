@@ -1,4 +1,4 @@
 [
-  { "id": "1", "email": "admin123@gmail.com" , "password": "123" , "role": "admin"},
-  { "id": "2", "email": "restaurantowner123@gmail.com" , "password": "123" , "role": "restaurant-owner"}
+  { "id": "1", "email": "admin123@gmail.com" , "password": "123456789" , "role": "admin"},
+  { "id": "2", "email": "restaurantowner123@gmail.com" , "password": "123456789" , "role": "restaurant-owner"}
 ]   

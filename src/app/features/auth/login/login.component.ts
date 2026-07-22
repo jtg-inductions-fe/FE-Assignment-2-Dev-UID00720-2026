@@ -1,52 +1,46 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '@/core/services/auth.service';
 import { Router } from '@angular/router';
+
+import { AuthService } from '@core/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
-  hide = true;
+export class LoginComponent {
+  passwordHidden = true;
   userForm!: FormGroup;
-  private router = inject(Router);
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
     this.userForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
-  ngOnInit(): void {
-    if (this.authService.isLoggedIn$) {
-      this.router.navigate(['/dashboard']);
-    }
-  }
-
   submitForm() {
-    if (this.userForm.valid) {
-      const { email, password } = this.userForm.value;
-
-      this.authService.login(email, password).subscribe({
-        next: userApiResponse => {
-          if (userApiResponse.status) {
-            this.router.navigate(['/dashboard']);
-          } else {
-            alert('invalid credentials');
-          }
-        },
-        error: err => {
-          alert(err.errorMessage);
-        },
-      });
-    } else {
-      alert('Invalid Form');
+    if (!this.userForm.valid) {
+      return;
     }
+
+    const { email, password } = this.userForm.value;
+    this.authService.login(email, password).subscribe({
+      next: userApiResponse => {
+        if (userApiResponse.status) {
+          this.router.navigate(['/dashboard']);
+        } else {
+          alert('invalid credentials');
+        }
+      },
+      error: err => {
+        alert(err.errorMessage);
+      },
+    });
   }
 }
