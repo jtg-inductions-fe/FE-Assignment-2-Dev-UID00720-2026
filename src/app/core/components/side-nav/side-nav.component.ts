@@ -40,7 +40,9 @@ export class SideNavComponent implements OnInit, OnDestroy {
     this.authSubscription = this.authService.isLoggedIn$.subscribe(
       loggedInDeatils => {
         let userRole = '';
-        if (loggedInDeatils.role) userRole = loggedInDeatils.role;
+        if (loggedInDeatils.role) {
+          userRole = loggedInDeatils.role;
+        }
         const filteredData = this.filterNodes(TREE_DATA, userRole);
         this.dataSource.data = filteredData;
       }

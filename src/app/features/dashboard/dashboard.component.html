@@ -1,1 +1,21 @@
-<p>dashboard works!</p>
+<section class="dashboard">
+  <div class="dashboard__content">
+    <div>
+      <h1>Overview Dashboard</h1>
+      <p>{{ desc }}</p>
+    </div>
+    <input type="text" />
+  </div>
+
+  <div class="dashboard__statistics">
+    <app-statistics
+      *ngFor="let item of statisticsData"
+      [dataName]="item.dataName"
+      [dataValue]="item.dataValue"
+      [dataIcon]="item.dataIcon"
+      [dataIconBgColor]="item.dataIconBgColor"
+      [dataIconColor]="item.dataIconColor"
+    >
+    </app-statistics>
+  </div>
+</section>

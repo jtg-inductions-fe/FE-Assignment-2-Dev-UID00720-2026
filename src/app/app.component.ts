@@ -13,6 +13,6 @@ export class AppComponent {
     private sidenavService: SidenavStateService
   ) {}
 
-  public isLoggedIn$ = this.authService.isLoggedIn$;
-  public isSidenavOpen$ = this.sidenavService.isOpen$;
+  isLoggedIn$ = this.authService.isLoggedIn$;
+  isSidenavOpen$ = this.sidenavService.isOpen$;
 }

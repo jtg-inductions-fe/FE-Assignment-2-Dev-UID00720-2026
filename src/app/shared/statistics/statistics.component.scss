@@ -1,0 +1,28 @@
+@use 'abstracts/functions' as f;
+@use 'abstracts/variables' as v;
+
+.statistics {
+  width: f.px-to-rem(400);
+  height: f.px-to-rem(72);
+  border: 1px solid v.$grey;
+  border-radius: 12px;
+  padding: f.px-to-rem(10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__icon {
+    width: f.px-to-rem(44);
+    height: f.px-to-rem(44);
+    border-radius: 8px;
+    padding: f.px-to-rem(6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.data-value {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0;
+}
