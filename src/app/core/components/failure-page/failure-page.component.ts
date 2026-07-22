@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import data from './failure-page-data.json';
+
+import { data } from './faliure-page.constants';
 
 @Component({
-  selector: 'app-page-not-found',
+  selector: 'app-failure-page',
   templateUrl: './failure-page.component.html',
   styleUrls: ['./failure-page.component.scss'],
 })
@@ -16,8 +17,5 @@ export class FailurePageComponent {
   errorPara = data.errorPage.desc;
   pageNotFoundImg = data.pageNotFound.img;
   errorImg = data.errorPage.img;
-
-  navigateToDashboard(): void {
-    this.router.navigate(['/dashboard']);
-  }
+  isErrorRoute = this.router.url === '/error';
 }

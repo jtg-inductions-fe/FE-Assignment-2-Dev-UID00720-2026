@@ -24,3 +24,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/// @param {String} $justify
+/// @param {String} $align
+/// @param {String} $direction
+@mixin flex-set($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}

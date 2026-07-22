@@ -5,21 +5,21 @@
   display: flex;
   flex-direction: column;
 
-  app-header {
+  .app-header {
     min-height: 68px;
     border-bottom: 1px solid v.$grey;
   }
 
-  app-side-nav {
+  .app-side-nav {
     display: none;
     border-right: 1px solid v.$grey;
   }
 
-  main {
+  .main {
     padding: 10px;
   }
 
-  @include m.for-device-width('sd') {
+  @include m.for-device-width('lg') {
     display: grid;
     height: 100vh;
     grid-template-areas:
@@ -28,22 +28,22 @@
     grid-template-rows: 68px 1fr;
     grid-template-columns: 250px 1fr;
 
-    app-header {
+    .app-header {
       grid-area: header;
     }
 
-    app-side-nav {
+    .app-side-nav {
       grid-area: sidenav;
       display: block;
     }
 
-    main {
+    .main {
       grid-area: main;
       overflow: auto;
     }
   }
 
-  @include m.for-device-width('lg') {
+  @include m.for-device-width('xl') {
     max-width: 1860px;
     margin: auto;
   }

@@ -1,24 +1,28 @@
 @use 'abstracts/mixins' as m;
+@use 'abstracts/functions' as f;
 
-.failure-component {
+.failure-page {
   text-align: center;
+
   &__img {
-    margin: 30px 0;
+    margin: f.px-to-rem(30) 0;
   }
-  &__para {
-    margin: 20px 0;
+
+  &__body {
+    margin: f.px-to-rem(20) 0;
   }
+
   &__btn {
     border-radius: 12px;
   }
 }
 
-@include m.for-device-width('sd') {
-  .failure-component {
+@include m.for-device-width('lg') {
+  .failure-page {
     &__img {
       height: 60vh;
-      max-width: 800px;
-      margin: 0px 0;
+      max-width: f.px-to-rem(800);
+      margin: 0;
     }
   }
 }

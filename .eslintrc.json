@@ -11,9 +11,12 @@
         "plugin:@angular-eslint/template/process-inline-templates",
         "plugin:prettier/recommended"
       ],
+      "plugins": ["unused-imports"],
       "rules": {
         "@angular-eslint/directive-selector": ["error", { "type": "attribute", "prefix": "app", "style": "camelCase" }],
-        "@angular-eslint/component-selector": ["error", { "type": "element", "prefix": "app", "style": "kebab-case" }]
+        "@angular-eslint/component-selector": ["error", { "type": "element", "prefix": "app", "style": "kebab-case" }],
+        "no-console": ["warn", { "allow": ["warn", "error"] }],
+        "unused-imports/no-unused-imports": "error"
       }
     },
     {
