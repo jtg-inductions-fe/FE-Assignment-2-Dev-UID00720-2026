@@ -1,7 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@core/services/auth/auth.service';
 import { Router } from '@angular/router';
-import { SidenavStateService } from '@core/services/sidenav-state/sidenav-state.service';
+import { SidenavService } from '@src/app/core/services/sidenav/sidenav.service';
 
 @Component({
   selector: 'app-header',
@@ -9,21 +9,34 @@ import { SidenavStateService } from '@core/services/sidenav-state/sidenav-state.
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  private router = inject(Router);
-  public userLoggedIn = false;
-  public userName? = '';
-  public userEmail? = '';
+  userLoggedIn = false;
+  userName = '';
+  userEmail = '';
+  profileUrl = '';
 
   constructor(
+    private router: Router,
     private authService: AuthService,
-    private sidenavService: SidenavStateService
+    private sidenavService: SidenavService
   ) {}
 
   ngOnInit() {
     this.authService.isLoggedIn$.subscribe(loginStatus => {
-      this.userLoggedIn = loginStatus?.status;
-      this.userName = loginStatus?.name;
-      this.userEmail = loginStatus?.email;
+      const {
+        status = false,
+        name = '',
+        email = '',
+        profileUrl = '',
+      } = loginStatus || {};
+
+      this.userLoggedIn = status;
+      this.userName = name;
+      this.userEmail = email;
+      this.profileUrl = profileUrl;
+
+      if (!this.userLoggedIn) {
+        this.router.navigate(['/']);
+      }
     });
   }
 

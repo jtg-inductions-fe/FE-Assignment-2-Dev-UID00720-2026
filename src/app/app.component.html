@@ -1,10 +1,11 @@
 <div class="layout-container">
-  <app-header></app-header>
+  <app-header class="app-header"></app-header>
   <app-side-nav
+    class="app-side-nav"
     *ngIf="(isLoggedIn$ | async)?.status"
-    [class.show]="isSidenavOpen$ | async"
+    [class.d-block]="isSidenavOpen$ | async"
   ></app-side-nav>
-  <main>
+  <main class="main">
     <router-outlet></router-outlet>
   </main>
 </div>

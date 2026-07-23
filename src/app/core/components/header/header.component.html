@@ -1,24 +1,35 @@
 <header class="header">
-  <a href="/dashboard" class="app-logo"
-    ><img src="assets/app-logo.svg" alt="app logo"
-  /></a>
-  <a *ngIf="!userLoggedIn" href="/dashboard" class="app-logo-mobile"
-    ><img src="assets/app-logo.svg" alt="app logo"
-  /></a>
+  <a routerLink="/dashboard" class="header__app-logo">
+    <img src="assets/app-logo.svg" alt="RMS" />
+  </a>
+
+  <a
+    *ngIf="!userLoggedIn"
+    routerLink="/dashboard"
+    class="header__app-logo-sm-devices"
+  >
+    <img src="assets/app-logo.svg" alt="RMS" />
+  </a>
 
   <button
-    type="button"
+    mat-icon-button
     aria-label="hamburger"
-    class="hamburger"
+    class="header__hamburger"
     *ngIf="userLoggedIn"
     (click)="toggleSidenav()"
   >
     <img src="assets/hamburger-icon.svg" alt="" />
   </button>
 
-  <button type="button" [matMenuTriggerFor]="menu" *ngIf="userLoggedIn">
-    <app-profile src="assets/profile.svg"></app-profile>
+  <button
+    *ngIf="userLoggedIn"
+    type="button"
+    aria-label="user profile"
+    [matMenuTriggerFor]="menu"
+  >
+    <app-user-avtar [src]="profileUrl"></app-user-avtar>
   </button>
+
   <mat-menu #menu="matMenu">
     <button mat-menu-item>{{ userName }}</button>
     <button mat-menu-item>{{ userEmail }}</button>

@@ -1,20 +1,20 @@
-<div class="failure-component">
+<div class="failure-page">
   <img
-    class="failure-component__img"
-    [src]="router.url === '/error' ? errorImg : pageNotFoundImg"
-    alt="decorative image"
+    class="failure-page__img"
+    alt=""
+    [src]="isErrorRoute ? errorImg : pageNotFoundImg"
   />
-  <h1 class="failure-component__heading">
-    {{ router.url === '/error' ? errorHeading : pageNotFoundHeading }}
+  <h1 class="failure-page__heading">
+    {{ isErrorRoute ? errorHeading : pageNotFoundHeading }}
   </h1>
-  <p class="failure-component__para">
-    {{ router.url === '/error' ? errorPara : pageNotFoundPara }}
+  <p class="failure-page__body">
+    {{ isErrorRoute ? errorPara : pageNotFoundPara }}
   </p>
   <button
     mat-raised-button
     color="primary"
-    class="page-404__btn"
-    (click)="navigateToDashboard()"
+    class="failure-page__btn"
+    [routerLink]="'/dashboard'"
   >
     Go Back Home
   </button>

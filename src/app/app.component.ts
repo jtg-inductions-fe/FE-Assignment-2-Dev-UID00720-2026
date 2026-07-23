@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from './core/services/auth/auth.service';
-import { SidenavStateService } from './core/services/sidenav-state/sidenav-state.service';
+import { SidenavService } from './core/services/sidenav/sidenav.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,11 @@ import { SidenavStateService } from './core/services/sidenav-state/sidenav-state
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  isLoggedIn$ = this.authService.isLoggedIn$;
+  isSidenavOpen$ = this.sidenavService.isOpen$;
+
   constructor(
     private authService: AuthService,
-    private sidenavService: SidenavStateService
+    private sidenavService: SidenavService
   ) {}
-
-  public isLoggedIn$ = this.authService.isLoggedIn$;
-  public isSidenavOpen$ = this.sidenavService.isOpen$;
 }

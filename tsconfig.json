@@ -26,10 +26,12 @@
       "dom"
     ],
     "paths": {
-      "@/*": ["src/app/*"],
+      "@src/*": ["src/*"],
+      "@app/*": ["src/app/*"],
       "@core/*": ["src/app/core/*"],
       "@features/*": ["src/app/features/*"],
-      "@shared/*": ["src/app/shared/*"]
+      "@shared/*": ["src/app/shared/*"],
+      "@models/*": ["src/app/models/*"]
     }
   },
   "angularCompilerOptions": {

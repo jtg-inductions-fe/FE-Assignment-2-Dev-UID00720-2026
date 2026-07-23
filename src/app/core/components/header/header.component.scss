@@ -1,24 +1,26 @@
 @use 'abstracts/mixins' as m;
+@use 'abstracts/functions' as f;
 
 .header {
-  padding: 0 16px;
-  display: flex;
+  @include m.flex-set(space-between, center);
+  padding: 0 f.px-to-rem(16);
   min-height: 68px;
-  align-items: center;
-  justify-content: space-between;
-}
-.app-logo {
-  display: none;
-}
 
-@include m.for-device-width('sd') {
-  .app-logo {
-    display: block;
-  }
-  .app-logo-mobile {
+  &__app-logo {
     display: none;
   }
-  .hamburger {
-    display: none;
+
+  @include m.for-device-width('lg') {
+    &__app-logo {
+      display: block;
+    }
+
+    &__app-logo-sm-devices {
+      display: none;
+    }
+
+    &__hamburger {
+      display: none;
+    }
   }
 }
