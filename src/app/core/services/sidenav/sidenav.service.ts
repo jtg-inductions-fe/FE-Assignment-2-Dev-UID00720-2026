@@ -4,13 +4,12 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class SidenavStateService {
+export class SidenavService {
   private isOpenSubject = new BehaviorSubject<boolean>(false);
   isOpen$: Observable<boolean> = this.isOpenSubject.asObservable();
 
   toggle() {
-    const currentValue = this.isOpenSubject.getValue();
-    this.isOpenSubject.next(!currentValue);
+    this.isOpenSubject.next(!this.isOpenSubject.getValue());
   }
 
   setOpen(state: boolean) {

@@ -1,7 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '@/core/services/auth/auth.service';
 import { Router } from '@angular/router';
+
+import { AuthService } from '@core/services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,17 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  hide = true;
+  passwordHidden = true;
   userForm!: FormGroup;
-  private router = inject(Router);
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
     this.userForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
@@ -30,23 +31,22 @@ export class LoginComponent implements OnInit {
   }
 
   submitForm() {
-    if (this.userForm.valid) {
-      const { email, password } = this.userForm.value;
-
-      this.authService.login(email, password).subscribe({
-        next: userApiResponse => {
-          if (userApiResponse.status) {
-            this.router.navigate(['/dashboard']);
-          } else {
-            alert('invalid credentials');
-          }
-        },
-        error: err => {
-          alert(err.errorMessage);
-        },
-      });
-    } else {
-      alert('Invalid Form');
+    if (!this.userForm.valid) {
+      return;
     }
+
+    const { email, password } = this.userForm.value;
+    this.authService.login(email, password).subscribe({
+      next: userApiResponse => {
+        if (userApiResponse.status) {
+          this.router.navigate(['/dashboard']);
+        } else {
+          alert('invalid credentials');
+        }
+      },
+      error: err => {
+        alert(err.errorMessage);
+      },
+    });
   }
 }
