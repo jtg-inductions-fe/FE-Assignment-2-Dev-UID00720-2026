@@ -8,7 +8,7 @@
       { "dataName": "Completed Orders", "dataValue": "67,200", "dataIcon": "check_circle", "dataIconBgColor": "#fff3e0", "dataIconColor": "#ef6c00" },
       { "dataName": "Active Restaurants", "dataValue": "5", "dataIcon": "restaurant", "dataIconBgColor": "#f3e5f5", "dataIconColor": "#0E9F6E" }
     ],
-    "ownersEmail": ["admin@allrestaurants.com"],
+    "ownersEmail": ["admin123@gmail.com"],
     "topCustomers": [
       { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 125000, "profileUrl": "assets/user-profile-1.svg" },
       { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 98500, "profileUrl": "assets/user-profile-3.svg" },
@@ -44,7 +44,7 @@
       { "dataName": "Completed Orders", "dataValue": "17,950", "dataIcon": "check_circle", "dataIconBgColor": "#fff3e0", "dataIconColor": "#ef6c00" },
       { "dataName": "Restaurant Owners", "dataValue": "2", "dataIcon": "local_pizza", "dataIconBgColor": "#f3e5f5", "dataIconColor": "#7b1fa2" }
     ],
-    "ownersEmail": ["owner1@gourmetgrill.com", "manager1@gourmetgrill.com"],
+    "ownersEmail": ["owner1@gmail.com", "manager1@gourmetgrill.com"],
     "topCustomers": [
       { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 45000, "profileUrl": "assets/user-profile-1.svg" },
       { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 32000, "profileUrl": "assets/user-profile-2.svg" },
@@ -78,7 +78,7 @@
       { "dataName": "Completed Orders", "dataValue": "15,100", "dataIcon": "check_circle", "dataIconBgColor": "#fff3e0", "dataIconColor": "#ef6c00" },
       { "dataName": "Restaurant Owners", "dataValue": "1", "dataIcon": "local_pizza", "dataIconBgColor": "#f3e5f5", "dataIconColor": "#7b1fa2" }
     ],
-    "ownersEmail": ["chef@bellaitalia.com"],
+    "ownersEmail": ["owner2@gmail.com"],
     "topCustomers": [
       { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 35000, "profileUrl": "assets/user-profile-1.svg" },
       { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 30000, "profileUrl": "assets/user-profile-2.svg" },

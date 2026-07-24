@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ) {}
 
   role = '';
+  email = '';
   desc = '';
   selected = '0';
 
@@ -44,6 +45,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
               ? 'System administrator overview panel. Impersonate owners or view aggregate metrics.'
               : 'Welcome back, restaurant partner! Track your orders and performance details.';
         }
+        this.email = loggedInDeatils.email ? loggedInDeatils.email : '';
       }
     );
 
@@ -52,9 +54,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
       .subscribe({
         next: data => {
           this.restaurantsData = data;
-          this.statisticsData = data[0].statistics;
-          const topCustomers = data[0].topCustomers;
-          const topSellingDishes = data[0].topSellingDishes;
+
+          if (this.role === 'restaurant-owner') {
+            this.selected = this.getRestaurantId(this.email);
+          }
+
+          this.statisticsData = data[parseInt(this.selected)].statistics;
+          const topCustomers = data[parseInt(this.selected)].topCustomers;
+          const topSellingDishes =
+            data[parseInt(this.selected)].topSellingDishes;
           this.filterData(topCustomers, topSellingDishes);
         },
         error: err => {
@@ -98,5 +106,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
       subtitle: dish.restaurant,
       value: dish.totalOrder,
     }));
+  }
+
+  getRestaurantId(email: string): string {
+    for (const restaurant of this.restaurantsData) {
+      if (restaurant.ownersEmail.includes(email)) {
+        return restaurant.id;
+      }
+    }
+    return '0';
   }
 }
