@@ -6,6 +6,11 @@ import { FailurePageComponent } from '@core/components/failure-page/failure-page
 const routes: Routes = [
   {
     path: '',
+    redirectTo: '/auth/login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'auth',
     loadChildren: () =>
       import('@features/auth/auth.module').then(m => m.AuthModule),
   },

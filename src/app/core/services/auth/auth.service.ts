@@ -2,48 +2,38 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SidenavStateService } from '@core/services/sidenav-state/sidenav-state.service';
+import { SidenavService } from '@core/services/sidenav/sidenav.service';
 
-export interface User {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-  role: string;
-}
-export interface UserApiResponse {
-  status: boolean;
-  message: string;
-}
-export interface LoggedInDeatils {
-  status: boolean;
-  name?: string;
-  email?: string;
-  role?: string;
-}
+import {
+  User,
+  UserApiResponse,
+  LoggedInDeatils,
+} from '@src/app/models/user.model';
+import { usersUrl } from './auth.constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private rawData = localStorage.getItem('user');
-  private userDataLocalStorage = this.rawData ? JSON.parse(this.rawData) : null;
-  private usersUrl = 'assets/db/users.json';
-  private isLoggedInSubject = new BehaviorSubject<LoggedInDeatils>(
-    this.userDataLocalStorage
-  );
+  private storedUserData: string | null = localStorage.getItem('user');
+  private parsedUser: LoggedInDeatils = this.storedUserData
+    ? JSON.parse(this.storedUserData)
+    : null;
+  private isLoggedInSubject = new BehaviorSubject(this.parsedUser);
   isLoggedIn$: Observable<LoggedInDeatils> =
     this.isLoggedInSubject.asObservable();
 
   constructor(
     private http: HttpClient,
-    private sidenavService: SidenavStateService
+    private sidenavService: SidenavService
   ) {}
 
-  private getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);
-  }
-
+  /**
+   * Authenticates a user by verifying their email and password against the retrieved user list.
+   * @param email
+   * @param password
+   * @returns An Observable emitting a UserApiResponse object containing the login status and a message.
+   */
   login(email: string, password: string): Observable<UserApiResponse> {
     return this.getUsers().pipe(
       map(users => {
@@ -62,6 +52,7 @@ export class AuthService {
           name: user.name,
           email: user.email,
           role: user.role,
+          profileUrl: user.profileUrl,
         };
         localStorage.setItem('user', JSON.stringify(loginStatus));
         this.isLoggedInSubject.next(loginStatus);
@@ -78,5 +69,9 @@ export class AuthService {
     localStorage.removeItem('user');
     this.sidenavService.setOpen(false);
     this.isLoggedInSubject.next({ status: false });
+  }
+
+  private getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(usersUrl);
   }
 }

@@ -4,7 +4,18 @@
       <h1>Overview Dashboard</h1>
       <p>{{ desc }}</p>
     </div>
-    <input type="text" />
+
+    <mat-form-field appearance="outline" class="select-restaurant">
+      <mat-label>View Dashboard As</mat-label>
+      <mat-select [(value)]="selected" (valueChange)="changeRestaurantData()">
+        <mat-option
+          *ngFor="let restaurant of restaurantsData"
+          value="{{ restaurant.id }}"
+        >
+          {{ restaurant.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
   <div class="dashboard__statistics">
@@ -18,4 +29,17 @@
     >
     </app-statistics>
   </div>
+
+  <app-list-card
+    class="dashboard__top-customers"
+    title="Top Customers"
+    [items]="topCustomers"
+    valuePrefix="$"
+  ></app-list-card>
+  <app-list-card
+    class="dashboard__top-selling-dishes"
+    title="Top Selling Dishes"
+    [items]="topSellingDishes"
+    valueSuffix="orders"
+  ></app-list-card>
 </section>

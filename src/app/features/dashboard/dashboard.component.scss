@@ -7,9 +7,16 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: f.px-to-rem(10);
   }
   &__statistics {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
+}
+
+.select-restaurant {
+  margin: f.px-to-rem(10);
+  width: f.px-to-rem(300);
 }

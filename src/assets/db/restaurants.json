@@ -1,0 +1,207 @@
+[
+  {
+    "id": "0",
+    "name": "All Restaurants",
+    "statistics": [
+      { "dataName": "Total Revenue", "dataValue": "$4,850,250", "dataIcon": "attach_money", "dataIconBgColor": "#e8f5e9", "dataIconColor": "#2e7d32" },
+      { "dataName": "Total Orders", "dataValue": "68,500", "dataIcon": "receipt_long", "dataIconBgColor": "#e3f2fd", "dataIconColor": "#1565c0" },
+      { "dataName": "Completed Orders", "dataValue": "67,200", "dataIcon": "check_circle", "dataIconBgColor": "#fff3e0", "dataIconColor": "#ef6c00" },
+      { "dataName": "Active Restaurants", "dataValue": "5", "dataIcon": "restaurant", "dataIconBgColor": "#f3e5f5", "dataIconColor": "#0E9F6E" }
+    ],
+    "ownersEmail": ["admin@allrestaurants.com"],
+    "topCustomers": [
+      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 125000, "profileUrl": "assets/user-profile-1.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 98500, "profileUrl": "assets/user-profile-3.svg" },
+      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 87200, "profileUrl": "assets/user-profile-2.svg" },
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 76400, "profileUrl": "assets/user-profile-4.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 65300, "profileUrl": "assets/user-profile-5.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 54100, "profileUrl": "assets/user-profile-6.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 48900, "profileUrl": "assets/user-profile-3.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 42500, "profileUrl": "assets/user-profile-2.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 38200, "profileUrl": "assets/user-profile-1.svg" },
+      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 31000, "profileUrl": "assets/user-profile-5.svg" }
+    ],
+    "topSellingDishes": [
+      { "name": "Truffle Burger", "restaurant": "Gourmet Grill", "totalOrder": 4500 },
+      { "name": "Margherita Pizza", "restaurant": "Bella Italia", "totalOrder": 4200 },
+      { "name": "Spicy Tuna Roll", "restaurant": "Sushi Master", "totalOrder": 3900 },
+      { "name": "Caesar Salad", "restaurant": "Green Leaf", "totalOrder": 3600 },
+      { "name": "Lobster Bisque", "restaurant": "Ocean Catch", "totalOrder": 3100 },
+      { "name": "Wagyu Steak", "restaurant": "Gourmet Grill", "totalOrder": 2800 },
+      { "name": "Pad Thai", "restaurant": "Thai Spice", "totalOrder": 2600 },
+      { "name": "Tiramisu", "restaurant": "Bella Italia", "totalOrder": 2400 },
+      { "name": "Salmon Sashimi", "restaurant": "Sushi Master", "totalOrder": 2200 },
+      { "name": "Quinoa Bowl", "restaurant": "Green Leaf", "totalOrder": 2000 }
+    ]
+  },
+  {
+    "id": "1",
+    "name": "Gourmet Grill",
+    "address": "123 Main St, New York, NY",
+    "statistics": [
+      { "dataName": "Total Revenue", "dataValue": "$1,250,000", "dataIcon": "attach_money", "dataIconBgColor": "#e8f5e9", "dataIconColor": "#2e7d32" },
+      { "dataName": "Total Orders", "dataValue": "18,200", "dataIcon": "receipt_long", "dataIconBgColor": "#e3f2fd", "dataIconColor": "#1565c0" },
+      { "dataName": "Completed Orders", "dataValue": "17,950", "dataIcon": "check_circle", "dataIconBgColor": "#fff3e0", "dataIconColor": "#ef6c00" },
+      { "dataName": "Restaurant Owners", "dataValue": "2", "dataIcon": "local_pizza", "dataIconBgColor": "#f3e5f5", "dataIconColor": "#7b1fa2" }
+    ],
+    "ownersEmail": ["owner1@gourmetgrill.com", "manager1@gourmetgrill.com"],
+    "topCustomers": [
+      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 45000, "profileUrl": "assets/user-profile-1.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 32000, "profileUrl": "assets/user-profile-2.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 28000, "profileUrl": "assets/user-profile-3.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 25000, "profileUrl": "assets/user-profile-4.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 21000, "profileUrl": "assets/user-profile-5.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 18000, "profileUrl": "assets/user-profile-4.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 15000, "profileUrl": "assets/user-profile-1.svg" },
+      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 12000, "profileUrl": "assets/user-profile-6.svg" }
+    ],
+    "topSellingDishes": [
+      { "name": "Truffle Burger", "restaurant": "Gourmet Grill", "totalOrder": 4500 },
+      { "name": "Wagyu Steak", "restaurant": "Gourmet Grill", "totalOrder": 2800 },
+      { "name": "Grilled Salmon", "restaurant": "Gourmet Grill", "totalOrder": 2100 },
+      { "name": "Ribeye Steak", "restaurant": "Gourmet Grill", "totalOrder": 1900 },
+      { "name": "Chicken Parmesan", "restaurant": "Gourmet Grill", "totalOrder": 1700 },
+      { "name": "BBQ Ribs", "restaurant": "Gourmet Grill", "totalOrder": 1500 },
+      { "name": "Mushroom Risotto", "restaurant": "Gourmet Grill", "totalOrder": 1300 },
+      { "name": "Filet Mignon", "restaurant": "Gourmet Grill", "totalOrder": 1100 },
+      { "name": "Lamb Chops", "restaurant": "Gourmet Grill", "totalOrder": 900 },
+      { "name": "Seafood Platter", "restaurant": "Gourmet Grill", "totalOrder": 800 }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Bella Italia",
+    "address": "456 Oak Ave, Chicago, IL",
+    "statistics": [
+      { "dataName": "Total Revenue", "dataValue": "$980,000", "dataIcon": "attach_money", "dataIconBgColor": "#e8f5e9", "dataIconColor": "#2e7d32" },
+      { "dataName": "Total Orders", "dataValue": "15,400", "dataIcon": "receipt_long", "dataIconBgColor": "#e3f2fd", "dataIconColor": "#1565c0" },
+      { "dataName": "Completed Orders", "dataValue": "15,100", "dataIcon": "check_circle", "dataIconBgColor": "#fff3e0", "dataIconColor": "#ef6c00" },
+      { "dataName": "Restaurant Owners", "dataValue": "1", "dataIcon": "local_pizza", "dataIconBgColor": "#f3e5f5", "dataIconColor": "#7b1fa2" }
+    ],
+    "ownersEmail": ["chef@bellaitalia.com"],
+    "topCustomers": [
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 35000, "profileUrl": "assets/user-profile-1.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 30000, "profileUrl": "assets/user-profile-2.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 22000, "profileUrl": "assets/user-profile-5.svg" },
+      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 19000, "profileUrl": "assets/user-profile-4.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 16000, "profileUrl": "assets/user-profile-3.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 14000, "profileUrl": "assets/user-profile-5.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 11000, "profileUrl": "assets/user-profile-2.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 9000, "profileUrl": "assets/user-profile-1.svg" }
+    ],
+    "topSellingDishes": [
+      { "name": "Margherita Pizza", "restaurant": "Bella Italia", "totalOrder": 4200 },
+      { "name": "Tiramisu", "restaurant": "Bella Italia", "totalOrder": 2400 },
+      { "name": "Lasagna", "restaurant": "Bella Italia", "totalOrder": 2000 },
+      { "name": "Carbonara", "restaurant": "Bella Italia", "totalOrder": 1800 },
+      { "name": "Bruschetta", "restaurant": "Bella Italia", "totalOrder": 1600 },
+      { "name": "Ravioli", "restaurant": "Bella Italia", "totalOrder": 1400 },
+      { "name": "Pesto Pasta", "restaurant": "Bella Italia", "totalOrder": 1200 },
+      { "name": "Cannoli", "restaurant": "Bella Italia", "totalOrder": 1000 },
+      { "name": "Calzone", "restaurant": "Bella Italia", "totalOrder": 900 },
+      { "name": "Minestrone", "restaurant": "Bella Italia", "totalOrder": 800 }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Sushi Master",
+    "address": "789 Pine Rd, San Francisco, CA",
+    "statistics": [
+      { "dataName": "Total Revenue", "dataValue": "$1,120,500", "dataIcon": "attach_money", "dataIconBgColor": "#e8f5e9", "dataIconColor": "#2e7d32" },
+      { "dataName": "Total Orders", "dataValue": "14,100", "dataIcon": "receipt_long", "dataIconBgColor": "#e3f2fd", "dataIconColor": "#1565c0" },
+      { "dataName": "Completed Orders", "dataValue": "13,850", "dataIcon": "check_circle", "dataIconBgColor": "#fff3e0", "dataIconColor": "#ef6c00" },
+      { "dataName": "Restaurant Owners", "dataValue": "2", "dataIcon": "local_pizza", "dataIconBgColor": "#f3e5f5", "dataIconColor": "#7b1fa2" }
+    ],
+    "ownersEmail": ["master@sushimaster.com", "info@sushimaster.com"],
+    "topCustomers": [
+      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 48000, "profileUrl": "assets/user-profile-2.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 43500, "profileUrl": "assets/user-profile-4.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 21500, "profileUrl": "assets/user-profile-6.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 20100, "profileUrl": "assets/user-profile-1.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 11900, "profileUrl": "assets/user-profile-3.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 3200, "profileUrl": "assets/user-profile-6.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 2300, "profileUrl": "assets/user-profile-4.svg" },
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 1400, "profileUrl": "assets/user-profile-3.svg" }
+    ],
+    "topSellingDishes": [
+      { "name": "Spicy Tuna Roll", "restaurant": "Sushi Master", "totalOrder": 3900 },
+      { "name": "Salmon Sashimi", "restaurant": "Sushi Master", "totalOrder": 2200 },
+      { "name": "Dragon Roll", "restaurant": "Sushi Master", "totalOrder": 1900 },
+      { "name": "California Roll", "restaurant": "Sushi Master", "totalOrder": 1700 },
+      { "name": "Miso Soup", "restaurant": "Sushi Master", "totalOrder": 1500 },
+      { "name": "Eel Nigiri", "restaurant": "Sushi Master", "totalOrder": 1300 },
+      { "name": "Tempura Shrimp", "restaurant": "Sushi Master", "totalOrder": 1100 },
+      { "name": "Edamame", "restaurant": "Sushi Master", "totalOrder": 900 },
+      { "name": "Rainbow Roll", "restaurant": "Sushi Master", "totalOrder": 800 },
+      { "name": "Seaweed Salad", "restaurant": "Sushi Master", "totalOrder": 700 }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Green Leaf",
+    "address": "321 Elm Blvd, Austin, TX",
+    "statistics": [
+      { "dataName": "Total Revenue", "dataValue": "$980,500", "dataIcon": "attach_money", "dataIconBgColor": "#e8f5e9", "dataIconColor": "#2e7d32" },
+      { "dataName": "Total Orders", "dataValue": "11,600", "dataIcon": "receipt_long", "dataIconBgColor": "#e3f2fd", "dataIconColor": "#1565c0" },
+      { "dataName": "Completed Orders", "dataValue": "11,400", "dataIcon": "check_circle", "dataIconBgColor": "#fff3e0", "dataIconColor": "#ef6c00" },
+      { "dataName": "Restaurant Owners", "dataValue": "1", "dataIcon": "local_pizza", "dataIconBgColor": "#f3e5f5", "dataIconColor": "#7b1fa2" }
+    ],
+    "ownersEmail": ["hello@greenleaf.com"],
+    "topCustomers": [
+      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 75200, "profileUrl": "assets/user-profile-1.svg" },
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 40000, "profileUrl": "assets/user-profile-6.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 22000, "profileUrl": "assets/user-profile-5.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 20000, "profileUrl": "assets/user-profile-3.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 18000, "profileUrl": "assets/user-profile-3.svg" },
+      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 12000, "profileUrl": "assets/user-profile-6.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 10000, "profileUrl": "assets/user-profile-1.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 8000, "profileUrl": "assets/user-profile-3.svg" }
+    ],
+    "topSellingDishes": [
+      { "name": "Caesar Salad", "restaurant": "Green Leaf", "totalOrder": 3600 },
+      { "name": "Quinoa Bowl", "restaurant": "Green Leaf", "totalOrder": 2000 },
+      { "name": "Avocado Toast", "restaurant": "Green Leaf", "totalOrder": 1800 },
+      { "name": "Kale Smoothie", "restaurant": "Green Leaf", "totalOrder": 1600 },
+      { "name": "Vegan Wrap", "restaurant": "Green Leaf", "totalOrder": 1400 },
+      { "name": "Greek Salad", "restaurant": "Green Leaf", "totalOrder": 1200 },
+      { "name": "Acai Bowl", "restaurant": "Green Leaf", "totalOrder": 1000 },
+      { "name": "Falafel Plate", "restaurant": "Green Leaf", "totalOrder": 900 },
+      { "name": "Chia Pudding", "restaurant": "Green Leaf", "totalOrder": 800 },
+      { "name": "Green Juice", "restaurant": "Green Leaf", "totalOrder": 700 }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Ocean Catch",
+    "address": "555 Sea View Dr, Miami, FL",
+    "statistics": [
+      { "dataName": "Total Revenue", "dataValue": "$519,250", "dataIcon": "attach_money", "dataIconBgColor": "#e8f5e9", "dataIconColor": "#2e7d32" },
+      { "dataName": "Total Orders", "dataValue": "9,200", "dataIcon": "receipt_long", "dataIconBgColor": "#e3f2fd", "dataIconColor": "#1565c0" },
+      { "dataName": "Completed Orders", "dataValue": "8,900", "dataIcon": "check_circle", "dataIconBgColor": "#fff3e0", "dataIconColor": "#ef6c00" },
+      { "dataName": "Restaurant Owners", "dataValue": "2", "dataIcon": "local_pizza", "dataIconBgColor": "#f3e5f5", "dataIconColor": "#7b1fa2" }
+    ],
+    "ownersEmail": ["captain@oceancatch.com", "manager@oceancatch.com"],
+    "topCustomers": [
+      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 32000, "profileUrl": "assets/user-profile-3.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 21000, "profileUrl": "assets/user-profile-4.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 21000, "profileUrl": "assets/user-profile-5.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 19000, "profileUrl": "assets/user-profile-6.svg" },
+      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 19000, "profileUrl": "assets/user-profile-1.svg" },
+      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 15000, "profileUrl": "assets/user-profile-5.svg" },
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 10000, "profileUrl": "assets/user-profile-3.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 8000, "profileUrl": "assets/user-profile-3.svg" }
+    ],
+    "topSellingDishes": [
+      { "name": "Lobster Bisque", "restaurant": "Ocean Catch", "totalOrder": 3100 },
+      { "name": "Grilled Octopus", "restaurant": "Ocean Catch", "totalOrder": 2500 },
+      { "name": "Fish Tacos", "restaurant": "Ocean Catch", "totalOrder": 2200 },
+      { "name": "Clam Chowder", "restaurant": "Ocean Catch", "totalOrder": 1900 },
+      { "name": "Shrimp Scampi", "restaurant": "Ocean Catch", "totalOrder": 1700 },
+      { "name": "Crab Cakes", "restaurant": "Ocean Catch", "totalOrder": 1500 },
+      { "name": "Oysters", "restaurant": "Ocean Catch", "totalOrder": 1300 },
+      { "name": "Seafood Paella", "restaurant": "Ocean Catch", "totalOrder": 1100 },
+      { "name": "Tuna Tartare", "restaurant": "Ocean Catch", "totalOrder": 900 },
+      { "name": "Mussels Marinara", "restaurant": "Ocean Catch", "totalOrder": 800 }
+    ]
+  }
+]   

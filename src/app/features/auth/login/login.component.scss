@@ -1,7 +1,9 @@
-mat-card {
+@use 'abstracts/functions' as f;
+
+.login-mat-card {
   width: 100%;
-  max-width: 400px;
-  min-height: 284px;
+  max-width: f.px-to-rem(400);
+  min-height: f.px-to-rem(284);
   position: fixed;
   left: 50%;
   top: 50%;
@@ -9,9 +11,9 @@ mat-card {
   text-align: center;
 }
 
-.form {
+.login {
   &__desc {
-    padding-bottom: 16px;
+    padding-bottom: f.px-to-rem(16);
   }
   &__input {
     width: 100%;

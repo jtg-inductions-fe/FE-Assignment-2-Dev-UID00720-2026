@@ -1,37 +1,44 @@
 @use 'abstracts/mixins' as m;
 @use 'abstracts/variables' as v;
+@use 'abstracts/functions' as f;
 
 .layout-container {
   display: flex;
   flex-direction: column;
 
-  app-header {
+  .app-header {
+    min-height: v.$header-height;
     border: 1px solid v.$grey;
   }
 
-  app-side-nav {
+  .app-side-nav {
     display: none;
     border: 1px solid v.$grey;
     background-color: v.$white;
     width: v.$side-nav-width;
     height: calc(100vh - v.$header-height);
     position: absolute;
-    z-index: 3;
+    z-index: map-get(v.$z-indexs, 'side-nav');
     top: v.$header-height;
   }
-  .show-side-nav {
+
+  .main {
+    padding: f.px-to-rem(10);
+    top: v.$header-height;
+  }
+  .d-block {
     display: block;
   }
   .hide-bg {
     position: absolute;
     width: 100%;
     height: calc(100vh - v.$header-height);
-    z-index: 2;
+    z-index: map-get(v.$z-indexs, 'main-content');
     background-color: v.$grey;
     backdrop-filter: blur(10px);
   }
 
-  @include m.for-device-width('sd') {
+  @include m.for-device-width('lg') {
     display: grid;
     height: 100vh;
     grid-template-areas:
@@ -40,23 +47,23 @@
     grid-template-rows: v.$header-height 1fr;
     grid-template-columns: v.$side-nav-width 1fr;
 
-    app-header {
+    .app-header {
       grid-area: header;
     }
 
-    app-side-nav {
+    .app-side-nav {
       grid-area: sidenav;
       display: block;
       position: static;
     }
 
-    main {
+    .main {
       grid-area: main;
       overflow: auto;
     }
   }
 
-  @include m.for-device-width('lg') {
+  @include m.for-device-width('xl') {
     max-width: 1860px;
     margin: auto;
   }

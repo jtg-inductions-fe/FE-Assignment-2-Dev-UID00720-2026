@@ -2,7 +2,7 @@
 @use 'abstracts/variables' as v;
 
 .statistics {
-  width: f.px-to-rem(400);
+  width: f.px-to-rem(370);
   height: f.px-to-rem(72);
   border: 1px solid v.$grey;
   border-radius: 12px;
@@ -10,6 +10,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: f.px-to-rem(5);
+
   &__icon {
     width: f.px-to-rem(44);
     height: f.px-to-rem(44);
@@ -21,7 +23,7 @@
   }
 }
 .data-value {
-  font-size: 20px;
+  font-size: f.px-to-rem(20);
   font-weight: 700;
   line-height: 30px;
   letter-spacing: 0;
