@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Restaurants } from '@src/app/models/restaurant.model';
+import { Restaurants, AddRestaurant } from '@src/app/models/restaurant.model';
 import { restaurantsUrl } from './restaurant.constants';
 import { Observable, of, tap } from 'rxjs';
 
@@ -25,7 +25,25 @@ export class RestaurantService {
     return of(this.restaurants);
   }
 
-  addRestaurant(): void {
-    this.restaurants.push();
+  addRestaurant(newRestaurant: AddRestaurant): void {
+    const restaurant: Restaurants = {
+      id: String(this.restaurants.length),
+      name: newRestaurant.name,
+      address: newRestaurant?.address,
+      statistics: [],
+      ownersEmail: newRestaurant.owners,
+      topCustomers: [],
+      topSellingDishes: [],
+    };
+    this.restaurants.push(restaurant);
+  }
+
+  getOneRestaurant(id: string): Restaurants | null {
+    for (const restaurant of this.restaurants) {
+      if (restaurant.id === id) {
+        return restaurant;
+      }
+    }
+    return null;
   }
 }

@@ -28,3 +28,16 @@ export interface Restaurants {
   topCustomers: RestaurantCustomer[];
   topSellingDishes: Dish[];
 }
+
+export interface DisplayRestaurant {
+  id: string;
+  name: string;
+  address?: string;
+  owners: string[];
+}
+
+export interface AddRestaurant {
+  name: string;
+  address?: string;
+  owners: string[];
+}

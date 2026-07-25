@@ -81,8 +81,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   changeRestaurantData() {
     this.statisticsData =
       this.restaurantsData[parseInt(this.selected)].statistics;
-    this.statisticsData =
-      this.restaurantsData[parseInt(this.selected)].statistics;
     const topCustomers =
       this.restaurantsData[parseInt(this.selected)].topCustomers;
     const topSellingDishes =
