@@ -40,6 +40,7 @@
     z-index: map-get(v.$z-indexs, 'main-content');
     background-color: v.$grey;
     backdrop-filter: blur(10px);
+    overflow-y: hidden;
   }
 
   @include m.for-device-width('lg') {
@@ -69,7 +70,9 @@
   }
 
   @include m.for-device-width('xl') {
-    max-width: 1860px;
-    margin: auto;
+    .main {
+      max-width: 1860px;
+      margin: 0 auto;
+    }
   }
 }

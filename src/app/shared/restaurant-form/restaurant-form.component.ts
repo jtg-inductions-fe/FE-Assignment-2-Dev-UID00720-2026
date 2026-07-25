@@ -2,7 +2,10 @@ import { Component, Input, OnInit } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
-import { AddRestaurant, Restaurants } from '@src/app/models/restaurant.model';
+import {
+  AddRestaurant,
+  Restaurants,
+} from '@src/app/core/models/restaurant.model';
 import { RestaurantService } from '@src/app/core/services/restaurant/restaurant.service';
 import { Router } from '@angular/router';
 

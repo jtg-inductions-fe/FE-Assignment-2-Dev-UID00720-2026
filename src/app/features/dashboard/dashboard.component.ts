@@ -8,8 +8,8 @@ import {
   Statistics,
   RestaurantCustomer,
   Dish,
-} from '@src/app/models/restaurant.model';
-import { ListCardItem } from '@src/app/models/list-card-item';
+} from '@src/app/core/models/restaurant.model';
+import { ListCardItem } from '@src/app/core/models/list-card-item';
 
 @Component({
   selector: 'app-dashboard',

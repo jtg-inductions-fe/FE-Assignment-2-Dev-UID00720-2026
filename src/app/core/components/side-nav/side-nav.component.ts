@@ -1,21 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
-import { AuthService } from '@core/services/auth/auth.service';
+
 import { Subscription } from 'rxjs';
-import data from './side-nav-data.json';
 
-interface SidenavNode {
-  name: string;
-  link?: string;
-  icon?: string;
-  role: string[];
-  children?: SidenavNode[];
-}
-
-const TREE_DATA: SidenavNode[] = data.treeData;
-
-const COMMON_TREE_DATA: SidenavNode[] = data.commonTreeData;
+import { AuthService } from '@core/services/auth/auth.service';
+import { COMMON_TREE_DATA, TREE_DATA } from './side-nav.constants';
+import { SidenavNode } from './side-nav.types';
 
 @Component({
   selector: 'app-side-nav',
@@ -23,13 +14,14 @@ const COMMON_TREE_DATA: SidenavNode[] = data.commonTreeData;
   styleUrls: ['./side-nav.component.scss'],
 })
 export class SideNavComponent implements OnInit, OnDestroy {
-  private authSubscription!: Subscription;
   treeControl = new NestedTreeControl<SidenavNode>(node => node.children);
   commonDataTreeControl = new NestedTreeControl<SidenavNode>(
     node => node.children
   );
   dataSource = new MatTreeNestedDataSource<SidenavNode>();
   commonData = new MatTreeNestedDataSource<SidenavNode>();
+
+  private authSubscription!: Subscription;
 
   constructor(private authService: AuthService) {
     this.dataSource.data = TREE_DATA;
@@ -48,6 +40,13 @@ export class SideNavComponent implements OnInit, OnDestroy {
       }
     );
   }
+
+  ngOnDestroy(): void {
+    if (this.authSubscription) {
+      this.authSubscription.unsubscribe();
+    }
+  }
+
   filterNodes(nodes: SidenavNode[], role: string): SidenavNode[] {
     return nodes.filter(node => {
       const isAllowed = node.role.includes(role);
@@ -60,10 +59,4 @@ export class SideNavComponent implements OnInit, OnDestroy {
 
   hasChild = (_: number, node: SidenavNode) =>
     !!node.children && node.children.length > 0;
-
-  ngOnDestroy(): void {
-    if (this.authSubscription) {
-      this.authSubscription.unsubscribe();
-    }
-  }
 }

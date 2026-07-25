@@ -5,7 +5,7 @@ import {
   Restaurants,
   AddRestaurant,
   Statistics,
-} from '@src/app/models/restaurant.model';
+} from '@src/app/core/models/restaurant.model';
 import { restaurantsUrl } from './restaurant.constants';
 import { Observable, of, tap } from 'rxjs';
 

@@ -5,7 +5,7 @@
     *ngIf="(isLoggedIn$ | async)?.status"
     [class.d-block]="isSidenavOpen$ | async"
   ></app-side-nav>
-  <main>
-    <router-outlet [class.hide-bg]="isSidenavOpen$ | async"></router-outlet>
+  <main class="main" [class.hide-bg]="isSidenavOpen$ | async">
+    <router-outlet></router-outlet>
   </main>
 </div>

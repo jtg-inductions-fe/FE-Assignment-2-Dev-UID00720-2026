@@ -8,7 +8,7 @@ import {
   User,
   UserApiResponse,
   LoggedInDeatils,
-} from '@src/app/models/user.model';
+} from '@src/app/core/models/user.model';
 import { usersUrl } from './auth.constants';
 
 @Injectable({

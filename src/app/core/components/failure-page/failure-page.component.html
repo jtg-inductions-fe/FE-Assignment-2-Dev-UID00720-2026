@@ -2,13 +2,17 @@
   <img
     class="failure-page__img"
     alt=""
-    [src]="isErrorRoute ? errorImg : pageNotFoundImg"
+    [src]="isErrorRoute ? ERROR_PAGE_TEXT.IMG_URL : PAGE_NOT_FOUND_TEXT.IMG_URL"
   />
   <h1 class="failure-page__heading">
-    {{ isErrorRoute ? errorHeading : pageNotFoundHeading }}
+    {{ isErrorRoute ? ERROR_PAGE_TEXT.TITLE : PAGE_NOT_FOUND_TEXT.TITLE }}
   </h1>
   <p class="failure-page__body">
-    {{ isErrorRoute ? errorPara : pageNotFoundPara }}
+    {{
+      isErrorRoute
+        ? ERROR_PAGE_TEXT.DESCRIPTION
+        : PAGE_NOT_FOUND_TEXT.DESCRIPTION
+    }}
   </p>
   <button
     mat-raised-button

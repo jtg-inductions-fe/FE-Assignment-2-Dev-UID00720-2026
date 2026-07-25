@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { RestaurantService } from '@src/app/core/services/restaurant/restaurant.service';
-import { DisplayRestaurant } from '@src/app/models/restaurant.model';
-import { Restaurants } from '@src/app/models/restaurant.model';
+import { DisplayRestaurant } from '@src/app/core/models/restaurant.model';
+import { Restaurants } from '@src/app/core/models/restaurant.model';
 
 @Component({
   selector: 'app-restaurant',
   templateUrl: './restaurant.component.html',
   styleUrls: ['./restaurant.component.scss'],
 })
-export class RestaurantComponent implements OnInit {
+export class RestaurantComponent implements OnInit, OnDestroy {
   displayRestaurantData: DisplayRestaurant[] = [];
   private restaurantSubscription!: Subscription;
 
@@ -28,6 +28,10 @@ export class RestaurantComponent implements OnInit {
           console.error('Error fetching restaurants', err);
         },
       });
+  }
+
+  ngOnDestroy(): void {
+    this.restaurantSubscription.unsubscribe();
   }
 
   filterRestaurantData(data: Restaurants[]): DisplayRestaurant[] {

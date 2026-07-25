@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DisplayRestaurant } from '@src/app/models/restaurant.model';
+import { DisplayRestaurant } from '@src/app/core/models/restaurant.model';
 
 @Component({
   selector: 'app-table-card',

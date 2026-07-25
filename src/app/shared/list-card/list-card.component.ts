@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { ListCardItem } from '@models/list-card-item';
+
+import { ListCardItem } from '@src/app/core/models/list-card-item';
+
 @Component({
   selector: 'app-list-card',
   templateUrl: './list-card.component.html',
