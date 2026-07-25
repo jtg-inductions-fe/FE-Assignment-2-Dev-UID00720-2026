@@ -1,15 +1,15 @@
 [
-  { "id": "1","name": "Admin" ,"email": "admin123@gmail.com" , "password": "123456789" , "role": "admin" ,"profileUrl": "assets/user-profile-1.svg"},
-  { "id": "2", "name": "Owner1" ,"email": "owner1@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-2.svg"},
-  { "id": "3", "name": "Owner2" ,"email": "owner2@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-3.svg"},
-  { "id": "4", "name": "Owner3" ,"email": "owner3@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-2.svg"},
-  { "id": "5", "name": "Owner4" ,"email": "owner4@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-4.svg"},
-  { "id": "6", "name": "Owner5" ,"email": "owner5@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-5.svg"},
-  { "id": "7", "name": "Owner6" ,"email": "owner6@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-6.svg"},
-  { "id": "8", "name": "Owner7" ,"email": "owner7@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-1.svg"},
-  { "id": "9", "name": "Owner8" ,"email": "owner8@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-2.svg"},
-  { "id": "10", "name": "Owner9" ,"email": "owner9@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-3.svg"},
-  { "id": "11", "name": "Owner10" ,"email": "owner10@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-4.svg"},
-  { "id": "12", "name": "Owner11" ,"email": "owner11@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-2.svg"}
+  { "id": "1","name": "Admin" ,"email": "admin123@gmail.com" , "password": "123456789" , "role": "admin" ,"profileUrl": "assets/images/user-profile-1.svg"},
+  { "id": "2", "name": "Owner1" ,"email": "owner1@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-2.svg"},
+  { "id": "3", "name": "Owner2" ,"email": "owner2@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-3.svg"},
+  { "id": "4", "name": "Owner3" ,"email": "owner3@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-2.svg"},
+  { "id": "5", "name": "Owner4" ,"email": "owner4@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-4.svg"},
+  { "id": "6", "name": "Owner5" ,"email": "owner5@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-5.svg"},
+  { "id": "7", "name": "Owner6" ,"email": "owner6@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-6.svg"},
+  { "id": "8", "name": "Owner7" ,"email": "owner7@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-1.svg"},
+  { "id": "9", "name": "Owner8" ,"email": "owner8@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-2.svg"},
+  { "id": "10", "name": "Owner9" ,"email": "owner9@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-3.svg"},
+  { "id": "11", "name": "Owner10" ,"email": "owner10@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-4.svg"},
+  { "id": "12", "name": "Owner11" ,"email": "owner11@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/images/user-profile-2.svg"}
 
 ]   

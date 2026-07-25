@@ -10,16 +10,16 @@
     ],
     "ownersEmail": ["admin123@gmail.com"],
     "topCustomers": [
-      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 125000, "profileUrl": "assets/user-profile-1.svg" },
-      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 98500, "profileUrl": "assets/user-profile-3.svg" },
-      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 87200, "profileUrl": "assets/user-profile-2.svg" },
-      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 76400, "profileUrl": "assets/user-profile-4.svg" },
-      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 65300, "profileUrl": "assets/user-profile-5.svg" },
-      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 54100, "profileUrl": "assets/user-profile-6.svg" },
-      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 48900, "profileUrl": "assets/user-profile-3.svg" },
-      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 42500, "profileUrl": "assets/user-profile-2.svg" },
-      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 38200, "profileUrl": "assets/user-profile-1.svg" },
-      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 31000, "profileUrl": "assets/user-profile-5.svg" }
+      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 125000, "profileUrl": "assets/images/user-profile-1.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 98500, "profileUrl": "assets/images/user-profile-3.svg" },
+      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 87200, "profileUrl": "assets/images/user-profile-2.svg" },
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 76400, "profileUrl": "assets/images/user-profile-4.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 65300, "profileUrl": "assets/images/user-profile-5.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 54100, "profileUrl": "assets/images/user-profile-6.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 48900, "profileUrl": "assets/images/user-profile-3.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 42500, "profileUrl": "assets/images/user-profile-2.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 38200, "profileUrl": "assets/images/user-profile-1.svg" },
+      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 31000, "profileUrl": "assets/images/user-profile-5.svg" }
     ],
     "topSellingDishes": [
       { "name": "Truffle Burger", "restaurant": "Gourmet Grill", "totalOrder": 4500 },
@@ -46,14 +46,14 @@
     ],
     "ownersEmail": ["owner1@gmail.com", "manager1@gourmetgrill.com"],
     "topCustomers": [
-      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 45000, "profileUrl": "assets/user-profile-1.svg" },
-      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 32000, "profileUrl": "assets/user-profile-2.svg" },
-      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 28000, "profileUrl": "assets/user-profile-3.svg" },
-      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 25000, "profileUrl": "assets/user-profile-4.svg" },
-      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 21000, "profileUrl": "assets/user-profile-5.svg" },
-      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 18000, "profileUrl": "assets/user-profile-4.svg" },
-      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 15000, "profileUrl": "assets/user-profile-1.svg" },
-      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 12000, "profileUrl": "assets/user-profile-6.svg" }
+      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 45000, "profileUrl": "assets/images/user-profile-1.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 32000, "profileUrl": "assets/images/user-profile-2.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 28000, "profileUrl": "assets/images/user-profile-3.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 25000, "profileUrl": "assets/images/user-profile-4.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 21000, "profileUrl": "assets/images/user-profile-5.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 18000, "profileUrl": "assets/images/user-profile-4.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 15000, "profileUrl": "assets/images/user-profile-1.svg" },
+      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 12000, "profileUrl": "assets/images/user-profile-6.svg" }
     ],
     "topSellingDishes": [
       { "name": "Truffle Burger", "restaurant": "Gourmet Grill", "totalOrder": 4500 },
@@ -80,14 +80,14 @@
     ],
     "ownersEmail": ["owner2@gmail.com"],
     "topCustomers": [
-      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 35000, "profileUrl": "assets/user-profile-1.svg" },
-      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 30000, "profileUrl": "assets/user-profile-2.svg" },
-      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 22000, "profileUrl": "assets/user-profile-5.svg" },
-      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 19000, "profileUrl": "assets/user-profile-4.svg" },
-      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 16000, "profileUrl": "assets/user-profile-3.svg" },
-      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 14000, "profileUrl": "assets/user-profile-5.svg" },
-      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 11000, "profileUrl": "assets/user-profile-2.svg" },
-      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 9000, "profileUrl": "assets/user-profile-1.svg" }
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 35000, "profileUrl": "assets/images/user-profile-1.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 30000, "profileUrl": "assets/images/user-profile-2.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 22000, "profileUrl": "assets/images/user-profile-5.svg" },
+      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 19000, "profileUrl": "assets/images/user-profile-4.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 16000, "profileUrl": "assets/images/user-profile-3.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 14000, "profileUrl": "assets/images/user-profile-5.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 11000, "profileUrl": "assets/images/user-profile-2.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 9000, "profileUrl": "assets/images/user-profile-1.svg" }
     ],
     "topSellingDishes": [
       { "name": "Margherita Pizza", "restaurant": "Bella Italia", "totalOrder": 4200 },
@@ -114,14 +114,14 @@
     ],
     "ownersEmail": ["master@sushimaster.com", "info@sushimaster.com"],
     "topCustomers": [
-      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 48000, "profileUrl": "assets/user-profile-2.svg" },
-      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 43500, "profileUrl": "assets/user-profile-4.svg" },
-      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 21500, "profileUrl": "assets/user-profile-6.svg" },
-      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 20100, "profileUrl": "assets/user-profile-1.svg" },
-      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 11900, "profileUrl": "assets/user-profile-3.svg" },
-      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 3200, "profileUrl": "assets/user-profile-6.svg" },
-      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 2300, "profileUrl": "assets/user-profile-4.svg" },
-      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 1400, "profileUrl": "assets/user-profile-3.svg" }
+      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 48000, "profileUrl": "assets/images/user-profile-2.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 43500, "profileUrl": "assets/images/user-profile-4.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 21500, "profileUrl": "assets/images/user-profile-6.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 20100, "profileUrl": "assets/images/user-profile-1.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 11900, "profileUrl": "assets/images/user-profile-3.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 3200, "profileUrl": "assets/images/user-profile-6.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 2300, "profileUrl": "assets/images/user-profile-4.svg" },
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 1400, "profileUrl": "assets/images/user-profile-3.svg" }
     ],
     "topSellingDishes": [
       { "name": "Spicy Tuna Roll", "restaurant": "Sushi Master", "totalOrder": 3900 },
@@ -148,14 +148,14 @@
     ],
     "ownersEmail": ["hello@greenleaf.com"],
     "topCustomers": [
-      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 75200, "profileUrl": "assets/user-profile-1.svg" },
-      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 40000, "profileUrl": "assets/user-profile-6.svg" },
-      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 22000, "profileUrl": "assets/user-profile-5.svg" },
-      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 20000, "profileUrl": "assets/user-profile-3.svg" },
-      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 18000, "profileUrl": "assets/user-profile-3.svg" },
-      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 12000, "profileUrl": "assets/user-profile-6.svg" },
-      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 10000, "profileUrl": "assets/user-profile-1.svg" },
-      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 8000, "profileUrl": "assets/user-profile-3.svg" }
+      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 75200, "profileUrl": "assets/images/user-profile-1.svg" },
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 40000, "profileUrl": "assets/images/user-profile-6.svg" },
+      { "name": "Creative Agency", "email": "lunch@creative.agency", "totalPurchase": 22000, "profileUrl": "assets/images/user-profile-5.svg" },
+      { "name": "StartUp Hub", "email": "food@startuphub.io", "totalPurchase": 20000, "profileUrl": "assets/images/user-profile-3.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 18000, "profileUrl": "assets/images/user-profile-3.svg" },
+      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 12000, "profileUrl": "assets/images/user-profile-6.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 10000, "profileUrl": "assets/images/user-profile-1.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 8000, "profileUrl": "assets/images/user-profile-3.svg" }
     ],
     "topSellingDishes": [
       { "name": "Caesar Salad", "restaurant": "Green Leaf", "totalOrder": 3600 },
@@ -182,14 +182,14 @@
     ],
     "ownersEmail": ["captain@oceancatch.com", "manager@oceancatch.com"],
     "topCustomers": [
-      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 32000, "profileUrl": "assets/user-profile-3.svg" },
-      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 21000, "profileUrl": "assets/user-profile-4.svg" },
-      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 21000, "profileUrl": "assets/user-profile-5.svg" },
-      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 19000, "profileUrl": "assets/user-profile-6.svg" },
-      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 19000, "profileUrl": "assets/user-profile-1.svg" },
-      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 15000, "profileUrl": "assets/user-profile-5.svg" },
-      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 10000, "profileUrl": "assets/user-profile-3.svg" },
-      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 8000, "profileUrl": "assets/user-profile-3.svg" }
+      { "name": "Global Corp", "email": "billing@globalcorp.com", "totalPurchase": 32000, "profileUrl": "assets/images/user-profile-3.svg" },
+      { "name": "Law Firm Partners", "email": "events@lawfirm.com", "totalPurchase": 21000, "profileUrl": "assets/images/user-profile-4.svg" },
+      { "name": "Media House", "email": "studio@mediahouse.tv", "totalPurchase": 21000, "profileUrl": "assets/images/user-profile-5.svg" },
+      { "name": "Finance Group", "email": "catering@financegrp.com", "totalPurchase": 19000, "profileUrl": "assets/images/user-profile-6.svg" },
+      { "name": "Retail Chain HQ", "email": "hq@retailchain.com", "totalPurchase": 19000, "profileUrl": "assets/images/user-profile-1.svg" },
+      { "name": "City Hospital", "email": "cafeteria@cityhosp.org", "totalPurchase": 15000, "profileUrl": "assets/images/user-profile-5.svg" },
+      { "name": "University Dining", "email": "orders@univ.edu", "totalPurchase": 10000, "profileUrl": "assets/images/user-profile-3.svg" },
+      { "name": "Tech Solutions Inc", "email": "accounts@techsol.com", "totalPurchase": 8000, "profileUrl": "assets/images/user-profile-3.svg" }
     ],
     "topSellingDishes": [
       { "name": "Lobster Bisque", "restaurant": "Ocean Catch", "totalOrder": 3100 },
