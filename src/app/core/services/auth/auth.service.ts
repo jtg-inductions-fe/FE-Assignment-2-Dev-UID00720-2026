@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { SidenavService } from '@core/services/sidenav/sidenav.service';
 
 import {
   User,
@@ -22,7 +23,10 @@ export class AuthService {
   isLoggedIn$: Observable<LoggedInDeatils> =
     this.isLoggedInSubject.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private sidenavService: SidenavService
+  ) {}
 
   /**
    * Authenticates a user by verifying their email and password against the retrieved user list.
@@ -63,6 +67,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('user');
+    this.sidenavService.setOpen(false);
     this.isLoggedInSubject.next({ status: false });
   }
 

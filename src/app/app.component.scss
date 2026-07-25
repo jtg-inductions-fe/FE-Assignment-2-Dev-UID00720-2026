@@ -1,30 +1,41 @@
 @use 'abstracts/mixins' as m;
 @use 'abstracts/variables' as v;
+@use 'abstracts/functions' as f;
 
 .layout-container {
   display: flex;
   flex-direction: column;
 
   .app-header {
-    min-height: 68px;
-    border-bottom: 1px solid v.$grey;
+    min-height: v.$header-height;
+    border: 1px solid v.$grey;
   }
 
   .app-side-nav {
     display: none;
-    border-right: 1px solid v.$grey;
-    width: 250px;
-    height: calc(100vh - 68px);
+    border: 1px solid v.$grey;
+    background-color: v.$white;
+    width: v.$side-nav-width;
+    height: calc(100vh - v.$header-height);
     position: absolute;
     z-index: map-get(v.$z-indexs, 'side-nav');
-    top: 68px;
+    top: v.$header-height;
   }
 
   .main {
-    padding: 10px;
+    padding: f.px-to-rem(10);
+    top: v.$header-height;
   }
   .d-block {
     display: block;
+  }
+  .hide-bg {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - v.$header-height);
+    z-index: map-get(v.$z-indexs, 'main-content');
+    background-color: v.$grey;
+    backdrop-filter: blur(10px);
   }
 
   @include m.for-device-width('lg') {
@@ -33,8 +44,8 @@
     grid-template-areas:
       'header header'
       'sidenav main';
-    grid-template-rows: 68px 1fr;
-    grid-template-columns: 250px 1fr;
+    grid-template-rows: v.$header-height 1fr;
+    grid-template-columns: v.$side-nav-width 1fr;
 
     .app-header {
       grid-area: header;
