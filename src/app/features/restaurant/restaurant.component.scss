@@ -1,0 +1,13 @@
+@use 'abstracts/mixins' as m;
+
+.restaurant {
+  margin: 20px;
+
+  &__content {
+    @include m.flex-set(space-between);
+  }
+
+  &__desc {
+    margin-bottom: 20px;
+  }
+}

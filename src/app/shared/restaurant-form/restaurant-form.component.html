@@ -1,0 +1,90 @@
+<mat-card class="form-container">
+  <!-- Bind to reactive form group -->
+  <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
+    <!-- Restaurant Name -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Restaurant Name</mat-label>
+      <input
+        matInput
+        formControlName="restaurantName"
+        placeholder="Ex: The Tasty Bistro"
+      />
+      <mat-error
+        *ngIf="restaurantForm.get('restaurantName')?.hasError('required')"
+      >
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Address -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Address</mat-label>
+      <input
+        matInput
+        formControlName="address"
+        placeholder="Ex: 123 Food Street, City"
+      />
+      <mat-error *ngIf="restaurantForm.get('address')?.hasError('required')">
+        Address is required
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Owner Emails (Chips) -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Owner Emails</mat-label>
+      <mat-chip-grid
+        #chipGrid
+        aria-label="Enter owner emails"
+        formControlName="ownerEmails"
+      >
+        <!-- Iterate over FormArray controls using index -->
+        <mat-chip-row
+          *ngFor="let emailControl of ownerEmails.controls; let i = index"
+          [removable]="true"
+          (removed)="remove(i)"
+        >
+          {{ emailControl.value }}
+          <button
+            matChipRemove
+            [attr.aria-label]="'remove ' + emailControl.value"
+          >
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip-row>
+
+        <input
+          matInput
+          [matChipInputFor]="chipGrid"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)"
+          placeholder="Type email and press Enter"
+          class="email-input"
+        />
+      </mat-chip-grid>
+      <mat-error
+        *ngIf="
+          restaurantForm.get('ownerEmails')?.invalid &&
+          restaurantForm.get('ownerEmails')?.touched
+        "
+      >
+        Please enter valid emails
+      </mat-error>
+    </mat-form-field>
+    <p>Add emails of users who own/manage this restaurant</p>
+
+    <div class="form-container__btns">
+      <button
+        mat-stroked-button
+        color="primary"
+        type="button"
+        routerLink="/restaurant"
+      >
+        CANCEL
+      </button>
+      <button mat-raised-button color="primary" type="submit">
+        <mat-icon>save</mat-icon>
+        {{ action }}
+      </button>
+    </div>
+  </form>
+</mat-card>

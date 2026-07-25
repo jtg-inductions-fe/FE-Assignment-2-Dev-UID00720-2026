@@ -1,0 +1,30 @@
+@use 'abstracts/functions' as f;
+@use 'abstracts/variables' as v;
+
+.statistics {
+  width: f.px-to-rem(383);
+  height: f.px-to-rem(72);
+  border: 1px solid v.$grey;
+  border-radius: 12px;
+  padding: f.px-to-rem(10);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: f.px-to-rem(5);
+
+  &__icon {
+    width: f.px-to-rem(44);
+    height: f.px-to-rem(44);
+    border-radius: 8px;
+    padding: f.px-to-rem(6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.data-value {
+  font-size: f.px-to-rem(20);
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0;
+}

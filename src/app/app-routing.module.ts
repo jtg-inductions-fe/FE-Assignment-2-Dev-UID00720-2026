@@ -22,6 +22,14 @@ const routes: Routes = [
       ),
     canActivate: [authGuard],
   },
+  {
+    path: 'restaurant',
+    loadChildren: () =>
+      import('./features/restaurant/restaurant.module').then(
+        m => m.RestaurantModule
+      ),
+    canActivate: [authGuard],
+  },
   { path: '**', component: FailurePageComponent },
 ];
 

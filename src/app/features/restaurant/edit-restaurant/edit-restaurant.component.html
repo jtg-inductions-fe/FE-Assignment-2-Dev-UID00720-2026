@@ -1,0 +1,13 @@
+<div class="edit-restaurant">
+  <button mat-stroked-button color="primary" [routerLink]="'/restaurant'">
+    <mat-icon>arrow_back</mat-icon>
+    Back
+  </button>
+  <h1>Edit Restaurant</h1>
+  <p>Update the restaurant name, address, and owners.</p>
+  <app-restaurant-form
+    class="edit-restaurant__form"
+    action="SAVE CHANGES"
+    [restaurant]="restaurant"
+  ></app-restaurant-form>
+</div>
