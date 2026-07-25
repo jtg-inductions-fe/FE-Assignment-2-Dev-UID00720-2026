@@ -46,4 +46,19 @@ export class RestaurantService {
     }
     return null;
   }
+
+  editRestaurant(
+    id: string | undefined,
+    editRestaurantDetails: AddRestaurant
+  ): void {
+    if (!id) return;
+
+    for (const restaurant of this.restaurants) {
+      if (restaurant.id === id) {
+        restaurant.name = editRestaurantDetails.name;
+        restaurant.address = editRestaurantDetails.address;
+        restaurant.ownersEmail = editRestaurantDetails.owners;
+      }
+    }
+  }
 }

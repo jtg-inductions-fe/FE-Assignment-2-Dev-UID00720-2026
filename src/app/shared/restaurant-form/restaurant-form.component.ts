@@ -33,14 +33,18 @@ export class RestaurantFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.action === 'SAVE CHANGES') {
-      this.restaurantForm
-        .get('restaurantName')
-        ?.setValue(this.restaurant?.name);
-      this.restaurantForm.get('address')?.setValue(this.restaurant?.address);
-      this.restaurantForm
-        .get('ownerEmails')
-        ?.setValue(this.convertToFormArray(this.restaurant?.ownersEmail));
+    if (this.action === 'SAVE CHANGES' && this.restaurant?.ownersEmail) {
+      this.restaurantForm.get('restaurantName')?.setValue(this.restaurant.name);
+      this.restaurantForm.get('address')?.setValue(this.restaurant.address);
+
+      // Clear existing (just in case)
+      const emailFormArray = this.ownerEmails;
+      emailFormArray.clear();
+
+      // Push new controls
+      this.restaurant.ownersEmail.forEach(email => {
+        emailFormArray.push(this.fb.control(email));
+      });
     }
   }
 
@@ -77,10 +81,17 @@ export class RestaurantFormComponent implements OnInit {
     return formArray.controls.map(control => control.value);
   }
 
-  convertToFormArray(emails: string[] | undefined): FormArray {
-    if (!emails) return this.fb.array<string>([]);
-    return this.fb.array(emails.map(email => this.fb.control(email)));
+  // Helper to populate the existing FormArray
+  prefillEmails(emails: string[] | undefined): void {
+    const emailFormArray = this.ownerEmails;
+    emailFormArray.clear();
+    if (emails) {
+      emails.forEach(email => emailFormArray.push(this.fb.control(email)));
+    }
   }
+
+  // Then in ngOnInit:
+  // this.prefillEmails(this.restaurant?.ownersEmail);
 
   // Submit Handler
   onSubmit() {
@@ -94,7 +105,22 @@ export class RestaurantFormComponent implements OnInit {
           address: this.restaurantForm.value.address,
           owners: emails,
         };
+
         this.restaurantService.addRestaurant(restaurantDetails);
+        this.router.navigate(['/restaurant']);
+      }
+
+      if (this.action === 'SAVE CHANGES') {
+        const restaurantDetails: AddRestaurant = {
+          name: this.restaurantForm.value.restaurantName,
+          address: this.restaurantForm.value.address,
+          owners: emails,
+        };
+
+        this.restaurantService.editRestaurant(
+          this.restaurant?.id,
+          restaurantDetails
+        );
         this.router.navigate(['/restaurant']);
       }
     }

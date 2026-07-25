@@ -17,6 +17,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { ListCardComponent } from './list-card/list-card.component';
 import { TableCardComponent } from './table-card/table-card.component';
 import { RestaurantFormComponent } from './restaurant-form/restaurant-form.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RestaurantFormComponent } from './restaurant-form/restaurant-form.compo
     ListCardComponent,
     TableCardComponent,
     RestaurantFormComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -46,6 +48,7 @@ import { RestaurantFormComponent } from './restaurant-form/restaurant-form.compo
     ListCardComponent,
     TableCardComponent,
     RestaurantFormComponent,
+    FooterComponent,
   ],
 })
 export class SharedModule {}
