@@ -1,6 +1,6 @@
 <div class="layout-container">
   <app-header class="app-header"></app-header>
-  <app-side-nav class="app-side-nav"></app-side-nav>
+  <app-side-nav class="app-side-nav" *ngIf="isLoggedIn$ | async"></app-side-nav>
   <main class="main">
     <router-outlet></router-outlet>
   </main>

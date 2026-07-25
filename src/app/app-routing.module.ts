@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuard } from '@core/guards/auth.guard';
 
 import { FailurePageComponent } from '@core/components/failure-page/failure-page.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -20,6 +20,7 @@ const routes: Routes = [
       import('@features/dashboard/dashboard.module').then(
         m => m.DashboardModule
       ),
+    canActivate: [authGuard],
   },
   { path: '**', component: FailurePageComponent },
 ];

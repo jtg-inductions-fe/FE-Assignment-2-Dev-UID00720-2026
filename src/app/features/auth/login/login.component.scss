@@ -1,0 +1,25 @@
+@use 'abstracts/functions' as f;
+
+.login-mat-card {
+  width: 100%;
+  max-width: f.px-to-rem(400);
+  min-height: f.px-to-rem(284);
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.login {
+  &__desc {
+    padding-bottom: f.px-to-rem(16);
+  }
+  &__input {
+    width: 100%;
+  }
+  &__btn {
+    width: 100%;
+    border-radius: 8px;
+  }
+}
