@@ -3,6 +3,10 @@ $black: #000000;
 $grey: rgba($black, 12%);
 $para-color: rgba($black, 60%);
 
+$z-indexs: (
+  side-nav: 2,
+);
+
 $breakpoints: (
   md: 768px,
   lg: 1024px,

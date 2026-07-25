@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { AuthService } from '@core/services/auth/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   passwordHidden = true;
   userForm!: FormGroup;
 
@@ -22,6 +22,12 @@ export class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
+  }
+
+  ngOnInit(): void {
+    if (this.authService.isLoggedIn$) {
+      this.router.navigate(['/dashboard']);
+    }
   }
 
   submitForm() {

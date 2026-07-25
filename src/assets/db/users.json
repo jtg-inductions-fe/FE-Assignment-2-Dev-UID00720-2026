@@ -1,4 +1,4 @@
 [
-  { "id": "1", "email": "admin123@gmail.com" , "password": "123456789" , "role": "admin"},
-  { "id": "2", "email": "restaurantowner123@gmail.com" , "password": "123456789" , "role": "restaurant-owner"}
+  { "id": "1","name": "Admin" ,"email": "admin123@gmail.com" , "password": "123456789" , "role": "admin" ,"profileUrl": "assets/user-profile-1.svg"},
+  { "id": "2", "name": "Owner" ,"email": "restaurantowner123@gmail.com" , "password": "123456789" , "role": "restaurant-owner", "profileUrl": "assets/user-profile-2.svg"}
 ]   

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { data } from './faliure-page.constants';
@@ -9,8 +9,6 @@ import { data } from './faliure-page.constants';
   styleUrls: ['./failure-page.component.scss'],
 })
 export class FailurePageComponent {
-  router = inject(Router);
-
   pageNotFoundHeading = data.pageNotFound.heading;
   errorHeading = data.errorPage.heading;
   pageNotFoundPara = data.pageNotFound.desc;
@@ -18,4 +16,6 @@ export class FailurePageComponent {
   pageNotFoundImg = data.pageNotFound.img;
   errorImg = data.errorPage.img;
   isErrorRoute = this.router.url === '/error';
+
+  constructor(private router: Router) {}
 }

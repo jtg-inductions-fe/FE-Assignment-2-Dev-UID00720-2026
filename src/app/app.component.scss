@@ -13,10 +13,18 @@
   .app-side-nav {
     display: none;
     border-right: 1px solid v.$grey;
+    width: 250px;
+    height: calc(100vh - 68px);
+    position: absolute;
+    z-index: map-get(v.$z-indexs, 'side-nav');
+    top: 68px;
   }
 
   .main {
     padding: 10px;
+  }
+  .d-block {
+    display: block;
   }
 
   @include m.for-device-width('lg') {
@@ -35,6 +43,7 @@
     .app-side-nav {
       grid-area: sidenav;
       display: block;
+      position: static;
     }
 
     .main {

@@ -2,18 +2,25 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { User, UserApiResponse } from '@src/app/models/user.model';
+
+import {
+  User,
+  UserApiResponse,
+  LoggedInDeatils,
+} from '@src/app/models/user.model';
 import { usersUrl } from './auth.constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private isLoggedInSubject = new BehaviorSubject<boolean>(
-    Boolean(localStorage.getItem('email'))
-  );
-
-  isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
+  private storedUserData: string | null = localStorage.getItem('user');
+  private parsedUser: LoggedInDeatils = this.storedUserData
+    ? JSON.parse(this.storedUserData)
+    : null;
+  private isLoggedInSubject = new BehaviorSubject(this.parsedUser);
+  isLoggedIn$: Observable<LoggedInDeatils> =
+    this.isLoggedInSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -36,10 +43,15 @@ export class AuthService {
             message: 'invalid credentials',
           };
         }
-
-        localStorage.setItem('email', user.email);
-        localStorage.setItem('role', user.role);
-        this.isLoggedInSubject.next(true);
+        const loginStatus = {
+          status: true,
+          name: user.name,
+          email: user.email,
+          role: user.role,
+          profileUrl: user.profileUrl,
+        };
+        localStorage.setItem('user', JSON.stringify(loginStatus));
+        this.isLoggedInSubject.next(loginStatus);
 
         return {
           status: Boolean(user),
@@ -50,8 +62,8 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('email');
-    this.isLoggedInSubject.next(false);
+    localStorage.removeItem('user');
+    this.isLoggedInSubject.next({ status: false });
   }
 
   private getUsers(): Observable<User[]> {

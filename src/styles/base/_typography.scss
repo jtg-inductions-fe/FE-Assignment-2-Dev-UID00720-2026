@@ -20,6 +20,7 @@ h3 {
   font-size: f.px-to-rem(16);
   font-weight: 700;
 }
+
 p {
   font-size: f.px-to-rem(14);
   font-weight: 500;
@@ -29,7 +30,10 @@ p {
 }
 
 button {
+  border: none;
+  background-color: transparent;
   font-size: f.px-to-rem(14);
+  cursor: pointer;
 }
 
 @include m.for-device-width('lg') {
