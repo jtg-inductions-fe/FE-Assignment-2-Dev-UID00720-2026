@@ -1,7 +1,7 @@
 export interface SidenavNode {
   name: string;
+  role: string[];
   link?: string;
   icon?: string;
-  role: string[];
   children?: SidenavNode[];
 }

@@ -1,3 +1,4 @@
+import { UserRole } from '@core/models/user.model';
 import { SidenavNode } from './side-nav.types';
 
 export const TREE_DATA: SidenavNode[] = [
@@ -5,49 +6,49 @@ export const TREE_DATA: SidenavNode[] = [
     name: 'Overview',
     icon: 'pie_chart',
     link: '/dashboard',
-    role: ['admin', 'restaurant-owner'],
+    role: [UserRole.Admin, UserRole.RestaurantOwner],
   },
   {
     name: 'Restaurant',
     icon: 'restaurant',
     link: '/restaurant',
-    role: ['admin'],
+    role: [UserRole.Admin],
   },
   {
     name: 'Menu',
     icon: 'local_dining',
     link: '/menu',
-    role: ['restaurant-owner'],
+    role: [UserRole.RestaurantOwner],
   },
   {
     name: 'Billing history',
     icon: 'description',
     link: '/billing-history',
-    role: ['restaurant-owner'],
+    role: [UserRole.RestaurantOwner],
   },
   {
     name: 'Inventory',
     icon: 'shopping_bag',
     link: '/inventory',
-    role: ['restaurant-owner'],
+    role: [UserRole.RestaurantOwner],
   },
   {
     name: 'Messages',
     icon: 'inbox',
     link: '/messages',
-    role: ['admin', 'restaurant-owner'],
+    role: [UserRole.Admin, UserRole.RestaurantOwner],
   },
   {
     name: 'Access',
     icon: 'lock',
     link: '/access',
-    role: ['admin', 'restaurant-owner'],
+    role: [UserRole.Admin, UserRole.RestaurantOwner],
     children: [
       {
         name: 'User data',
         icon: 'lock',
         link: '/users-data',
-        role: ['admin', 'restaurant-owner'],
+        role: [UserRole.Admin, UserRole.RestaurantOwner],
       },
     ],
   },
@@ -58,18 +59,18 @@ export const COMMON_TREE_DATA: SidenavNode[] = [
     name: 'My Profile',
     icon: 'assignment',
     link: '/profile',
-    role: ['admin', 'restaurant-owner'],
+    role: [UserRole.Admin, UserRole.RestaurantOwner],
   },
   {
     name: 'My Gallery',
     icon: 'photo_library',
     link: '/gallery',
-    role: ['admin', 'restaurant-owner'],
+    role: [UserRole.Admin, UserRole.RestaurantOwner],
   },
   {
     name: 'Help',
     icon: 'support',
     link: '/help',
-    role: ['admin', 'restaurant-owner'],
+    role: [UserRole.Admin, UserRole.RestaurantOwner],
   },
 ];

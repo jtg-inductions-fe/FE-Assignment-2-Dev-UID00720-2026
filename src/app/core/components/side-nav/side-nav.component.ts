@@ -31,11 +31,11 @@ export class SideNavComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.authSubscription = this.authService.isLoggedIn$.subscribe(
       loggedInDeatils => {
-        let userRole = '';
-        if (loggedInDeatils.role) {
-          userRole = loggedInDeatils.role;
-        }
-        const filteredData = this.filterNodes(TREE_DATA, userRole);
+        const userRole = loggedInDeatils.role ? loggedInDeatils.role : '';
+        const filteredData = this.filterNodes(
+          structuredClone(TREE_DATA),
+          userRole
+        );
         this.dataSource.data = filteredData;
       }
     );
