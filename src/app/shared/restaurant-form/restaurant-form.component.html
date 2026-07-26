@@ -2,7 +2,7 @@
   <!-- Bind to reactive form group -->
   <form [formGroup]="restaurantForm" (ngSubmit)="onSubmit()">
     <!-- Restaurant Name -->
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field appearance="outline" class="full-width form-field">
       <mat-label>Restaurant Name</mat-label>
       <input
         matInput
@@ -17,7 +17,7 @@
     </mat-form-field>
 
     <!-- Address -->
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field appearance="outline" class="full-width form-field">
       <mat-label>Address</mat-label>
       <input
         matInput
@@ -30,7 +30,7 @@
     </mat-form-field>
 
     <!-- Owner Emails (Chips) -->
-    <mat-form-field appearance="outline" class="full-width">
+    <mat-form-field appearance="outline" class="full-width form-filed">
       <mat-label>Owner Emails</mat-label>
       <mat-chip-grid
         #chipGrid
@@ -61,14 +61,6 @@
           class="email-input"
         />
       </mat-chip-grid>
-      <mat-error
-        *ngIf="
-          restaurantForm.get('ownerEmails')?.invalid &&
-          restaurantForm.get('ownerEmails')?.touched
-        "
-      >
-        Please enter valid emails
-      </mat-error>
     </mat-form-field>
     <p>Add emails of users who own/manage this restaurant</p>
 

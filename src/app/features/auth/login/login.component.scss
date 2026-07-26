@@ -13,10 +13,11 @@
 
 .login {
   &__desc {
-    padding-bottom: f.px-to-rem(16);
+    margin-bottom: f.px-to-rem(25);
   }
   &__input {
     width: 100%;
+    margin-bottom: f.px-to-rem(15);
   }
   &__btn {
     width: 100%;

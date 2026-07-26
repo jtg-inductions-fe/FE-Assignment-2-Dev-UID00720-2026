@@ -31,7 +31,7 @@ export class RestaurantFormComponent implements OnInit {
     this.restaurantForm = this.fb.group({
       restaurantName: ['', Validators.required],
       address: ['', Validators.required],
-      ownerEmails: this.fb.array<string>([]), // FormArray to hold email strings
+      ownerEmails: this.fb.array<string>([], [Validators.required]), // FormArray to hold email strings
     });
   }
 

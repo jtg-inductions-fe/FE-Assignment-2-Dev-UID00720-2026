@@ -29,6 +29,7 @@
   .main {
     padding: f.px-to-rem(10);
     top: v.$header-height;
+    width: 100%;
   }
   .d-block {
     display: block;
@@ -41,6 +42,8 @@
     background-color: v.$grey;
     backdrop-filter: blur(10px);
     overflow-y: hidden;
+    filter: grayscale(100%) blur(4px);
+    pointer-events: none;
   }
 
   @include m.for-device-width('lg') {
@@ -71,7 +74,7 @@
 
   @include m.for-device-width('xl') {
     .main {
-      max-width: 1860px;
+      max-width: 1920px;
       margin: 0 auto;
     }
   }
