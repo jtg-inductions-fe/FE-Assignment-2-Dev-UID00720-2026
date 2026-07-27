@@ -1,0 +1,49 @@
+@use 'abstracts/functions' as f;
+@use 'abstracts/variables' as v;
+
+.list-card {
+  padding: f.px-to-rem(24);
+  &__heading {
+    margin-bottom: f.px-to-rem(10);
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+
+    padding: f.px-to-rem(8);
+    margin-top: f.px-to-rem(8);
+    border-bottom: 1px solid v.$grey;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: f.px-to-rem(24);
+
+    img {
+      width: f.px-to-rem(40);
+      height: f.px-to-rem(40);
+      border-radius: 50%;
+    }
+  }
+
+  &__value {
+    font-weight: 600;
+  }
+
+  &__value-suffix {
+    font-weight: normal;
+  }
+
+  &__wrapper {
+    max-height: 320px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+  }
+}

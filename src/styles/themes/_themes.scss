@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+@use 'abstracts/variables' as v;
+
+@include mat.core;
+
+$my-primary: mat.define-palette(v.$my-primary-color-palette, 700);
+$my-accent: mat.define-palette(v.$my-secondary-color-palette, 500);
+
+$my-custom-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+    ),
+  )
+);
+
+@include mat.all-component-themes($my-custom-theme);

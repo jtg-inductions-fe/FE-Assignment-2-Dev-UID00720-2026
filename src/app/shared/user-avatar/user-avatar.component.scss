@@ -1,0 +1,8 @@
+@use 'abstracts/functions' as f;
+
+.user-avatar {
+  width: f.px-to-rem(40);
+  height: f.px-to-rem(40);
+  border-radius: 20px;
+  position: relative;
+}

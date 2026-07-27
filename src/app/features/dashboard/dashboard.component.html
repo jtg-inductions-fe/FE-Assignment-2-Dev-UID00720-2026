@@ -1,0 +1,72 @@
+<section class="dashboard">
+  <div class="dashboard__content">
+    <div>
+      <h1>Overview Dashboard</h1>
+      <p>{{ desc }}</p>
+    </div>
+
+    <mat-form-field
+      *ngIf="role === 'admin'"
+      appearance="outline"
+      class="select-restaurant"
+    >
+      <mat-label>View Dashboard As</mat-label>
+      <mat-select [(value)]="selected" (valueChange)="changeRestaurantData()">
+        <mat-option
+          *ngFor="let restaurant of restaurantsData"
+          value="{{ restaurant.id }}"
+        >
+          {{ restaurant.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="dashboard__statistics">
+    <app-statistics
+      *ngFor="let item of statisticsData"
+      [dataName]="item.dataName"
+      [dataValue]="item.dataValue"
+      [dataIcon]="item.dataIcon"
+      [dataIconBgColor]="item.dataIconBgColor"
+      [dataIconColor]="item.dataIconColor"
+    >
+    </app-statistics>
+  </div>
+
+  <div class="dashboard__report-generator">
+    <div>
+      <h3>Report Generator</h3>
+      <p class="sm-para">
+        Generate performance reports for the selected restaurant context
+      </p>
+    </div>
+    <div class="dashboard__report-generator__btns">
+      <button mat-stroked-button color="primary" class="failure-page__btn">
+        <mat-icon>bar_chart</mat-icon>
+        Top 10 Ordered Items
+      </button>
+      <button mat-raised-button color="primary" class="failure-page__btn">
+        <mat-icon>pie_chart</mat-icon>
+        Frequently Bought Together
+      </button>
+    </div>
+  </div>
+
+  <div class="dashboard__cards">
+    <app-list-card
+      class="dashboard__top-customers"
+      title="Top Customers"
+      [items]="topCustomers"
+      valuePrefix="$"
+    ></app-list-card>
+    <app-list-card
+      class="dashboard__top-selling-dishes"
+      title="Top Selling Dishes"
+      [items]="topSellingDishes"
+      valueSuffix="orders"
+    ></app-list-card>
+  </div>
+
+  <app-footer></app-footer>
+</section>

@@ -1,0 +1,14 @@
+<article class="statistics">
+  <div class="statistics__data">
+    <p class="sm-para">
+      {{ dataName }}
+    </p>
+    <div class="data-value">
+      {{ dataValue }}
+    </div>
+  </div>
+
+  <div class="statistics__icon" [style.background-color]="dataIconBgColor">
+    <mat-icon [style.color]="dataIconColor">{{ dataIcon }}</mat-icon>
+  </div>
+</article>

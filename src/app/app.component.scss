@@ -1,0 +1,81 @@
+@use 'abstracts/mixins' as m;
+@use 'abstracts/variables' as v;
+@use 'abstracts/functions' as f;
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+
+  .app-header {
+    min-height: v.$header-height;
+    border: 1px solid v.$grey;
+    background-color: v.$white;
+    position: sticky;
+    top: 0;
+    z-index: map-get(v.$z-indexs, 'header');
+  }
+
+  .app-side-nav {
+    display: none;
+    border: 1px solid v.$grey;
+    background-color: v.$white;
+    width: v.$side-nav-width;
+    height: calc(100vh - v.$header-height);
+    position: absolute;
+    z-index: map-get(v.$z-indexs, 'side-nav');
+    top: v.$header-height;
+  }
+
+  .main {
+    padding: f.px-to-rem(10);
+    top: v.$header-height;
+    width: 100%;
+  }
+  .d-block {
+    display: block;
+  }
+  .hide-bg {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - v.$header-height);
+    z-index: map-get(v.$z-indexs, 'main-content');
+    background-color: v.$grey;
+    backdrop-filter: blur(10px);
+    overflow-y: hidden;
+    filter: grayscale(100%) blur(4px);
+    pointer-events: none;
+  }
+
+  @include m.for-device-width('lg') {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+      'header header'
+      'sidenav main';
+    grid-template-rows: v.$header-height 1fr;
+    grid-template-columns: v.$side-nav-width 1fr;
+
+    .app-header {
+      grid-area: header;
+    }
+
+    .app-side-nav {
+      grid-area: sidenav;
+      display: block;
+      position: static;
+      height: auto;
+    }
+
+    .main {
+      grid-area: main;
+      overflow: auto;
+    }
+  }
+
+  @include m.for-device-width('xl') {
+    .main {
+      max-width: 1920px;
+      margin: 0 auto;
+    }
+  }
+}

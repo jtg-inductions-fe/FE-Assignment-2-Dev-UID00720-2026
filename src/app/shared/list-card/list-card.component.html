@@ -1,0 +1,41 @@
+<mat-card>
+  <div class="list-card">
+    <h2 class="list-card__heading">
+      {{ title }}
+    </h2>
+    <div class="list-card__wrapper" *ngIf="items.length; else noItems">
+      <div class="list-card__item" *ngFor="let item of items">
+        <div class="list-card__left">
+          <app-user-avtar
+            *ngIf="item.image"
+            [src]="item.image"
+          ></app-user-avtar>
+
+          <div class="list-card__content">
+            <h3>
+              {{ item.title }}
+            </h3>
+
+            <p *ngIf="item.subtitle" class="sm-para">
+              {{ item.subtitle }}
+            </p>
+          </div>
+        </div>
+
+        <div class="list-card__right">
+          <span class="list-card__value">
+            <span class="list-card__value-preffix" *ngIf="valuePrefix">{{
+              valuePrefix
+            }}</span>
+            {{ item.value }}
+            <span class="list-card__value-suffix" *ngIf="valueSuffix">{{
+              valueSuffix
+            }}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noItems> No Item Found </ng-template>
+  </div>
+</mat-card>

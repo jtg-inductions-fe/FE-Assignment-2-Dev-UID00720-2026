@@ -1,0 +1,28 @@
+@use 'abstracts/mixins' as m;
+@use 'abstracts/functions' as f;
+
+.failure-page {
+  text-align: center;
+
+  &__img {
+    margin: f.px-to-rem(30) 0;
+  }
+
+  &__body {
+    margin: f.px-to-rem(20) 0;
+  }
+
+  &__btn {
+    border-radius: 12px;
+  }
+}
+
+@include m.for-device-width('lg') {
+  .failure-page {
+    &__img {
+      height: 60vh;
+      max-width: f.px-to-rem(800);
+      margin: 0;
+    }
+  }
+}

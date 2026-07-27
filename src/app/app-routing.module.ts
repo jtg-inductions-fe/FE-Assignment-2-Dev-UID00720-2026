@@ -1,10 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { authGuard } from '@core/guards/auth.guard';
 
-const routes: Routes = [];
+import { FailurePageComponent } from '@core/components/failure-page/failure-page.component';
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/auth/login',
+    pathMatch: 'full',
+  },
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('@features/auth/auth.module').then(m => m.AuthModule),
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('@features/dashboard/dashboard.module').then(
+        m => m.DashboardModule
+      ),
+    canActivate: [authGuard],
+  },
+  {
+    path: 'restaurant',
+    loadChildren: () =>
+      import('./features/restaurant/restaurant.module').then(
+        m => m.RestaurantModule
+      ),
+    canActivate: [authGuard],
+  },
+  { path: '**', component: FailurePageComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,13 @@
+@use 'abstracts/mixins' as m;
+
+.footer {
+  height: 120px;
+  border-radius: 16px;
+  padding: 32px;
+  @include m.flex-set(space-between);
+
+  &__socials {
+    @include m.flex-set();
+    gap: 20px;
+  }
+}

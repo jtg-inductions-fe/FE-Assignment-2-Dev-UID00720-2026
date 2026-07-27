@@ -1,0 +1,11 @@
+@use 'abstracts/functions' as f;
+
+.table-card {
+  width: 100%;
+  padding: 15px;
+  border-radius: 16px;
+  &__data-name {
+    font-size: f.px-to-rem(16);
+    font-weight: 700;
+  }
+}
