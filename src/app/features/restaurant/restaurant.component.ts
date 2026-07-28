@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { RestaurantService } from '@src/app/core/services/restaurant/restaurant.service';
 import { DisplayRestaurant } from '@src/app/core/models/restaurant.model';
 import { Restaurants } from '@src/app/core/models/restaurant.model';
+import { ROUTES } from '@core/routes.constants';
 
 @Component({
   selector: 'app-restaurant',
@@ -13,6 +14,8 @@ import { Restaurants } from '@src/app/core/models/restaurant.model';
 })
 export class RestaurantComponent implements OnInit, OnDestroy {
   displayRestaurantData: DisplayRestaurant[] = [];
+  addRestaurantUrl = ROUTES.RESTAURANT.ADD;
+
   private restaurantSubscription!: Subscription;
 
   constructor(private restaurantService: RestaurantService) {}

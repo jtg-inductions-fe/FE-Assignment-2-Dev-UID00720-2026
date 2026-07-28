@@ -1,17 +1,18 @@
 import { UserRole } from '@core/models/user.model';
 import { SidenavNode } from './side-nav.types';
+import { ROUTES } from '@core/routes.constants';
 
 export const TREE_DATA: SidenavNode[] = [
   {
     name: 'Overview',
     icon: 'pie_chart',
-    link: '/dashboard',
+    link: ROUTES.DASHBOARD,
     role: [UserRole.Admin, UserRole.RestaurantOwner],
   },
   {
     name: 'Restaurant',
     icon: 'restaurant',
-    link: '/restaurant',
+    link: ROUTES.RESTAURANT.RESTAURANTS,
     role: [UserRole.Admin],
   },
   {

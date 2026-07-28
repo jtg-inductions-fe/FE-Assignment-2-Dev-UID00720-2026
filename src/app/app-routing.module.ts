@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { authGuard } from '@core/guards/auth.guard';
+import { ROUTES } from '@core/routes.constants';
 
 import { FailurePageComponent } from '@core/components/failure-page/failure-page.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/auth/login',
+    redirectTo: ROUTES.AUTH.AUTH + '/' + ROUTES.AUTH.LOGIN,
     pathMatch: 'full',
   },
   {
-    path: 'auth',
+    path: ROUTES.AUTH.AUTH,
     loadChildren: () =>
       import('@features/auth/auth.module').then(m => m.AuthModule),
   },
   {
-    path: 'dashboard',
+    path: ROUTES.DASHBOARD,
     loadChildren: () =>
       import('@features/dashboard/dashboard.module').then(
         m => m.DashboardModule
@@ -23,7 +24,7 @@ const routes: Routes = [
     canActivate: [authGuard],
   },
   {
-    path: 'restaurant',
+    path: ROUTES.RESTAURANT.RESTAURANTS,
     loadChildren: () =>
       import('./features/restaurant/restaurant.module').then(
         m => m.RestaurantModule

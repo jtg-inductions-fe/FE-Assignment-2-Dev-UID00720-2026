@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthService } from '@core/services/auth/auth.service';
+import { ROUTES } from '@core/routes.constants';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,8 @@ import { AuthService } from '@core/services/auth/auth.service';
 export class LoginComponent implements OnInit {
   passwordHidden = true;
   userForm!: FormGroup;
+  dashboardUrl = ROUTES.DASHBOARD;
+  loading = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn$) {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate([this.dashboardUrl]);
     }
   }
 
@@ -35,12 +38,16 @@ export class LoginComponent implements OnInit {
       return;
     }
 
+    this.loading = true;
+
     const { email, password } = this.userForm.value;
     this.authService.login(email, password).subscribe({
       next: userApiResponse => {
         if (userApiResponse.status) {
-          this.router.navigate(['/dashboard']);
+          this.loading = false;
+          this.router.navigate([this.dashboardUrl]);
         } else {
+          this.loading = false;
           alert('invalid credentials');
         }
       },

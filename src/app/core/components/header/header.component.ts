@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@core/services/auth/auth.service';
 import { Router } from '@angular/router';
 import { SidenavService } from '@src/app/core/services/sidenav/sidenav.service';
+import { ROUTES } from '@core/routes.constants';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,7 @@ export class HeaderComponent implements OnInit {
   userName = '';
   userEmail = '';
   profileUrl = '';
+  dashboardUrl = ROUTES.DASHBOARD;
 
   constructor(
     private router: Router,

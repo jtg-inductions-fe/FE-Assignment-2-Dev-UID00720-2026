@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { RestaurantComponent } from './restaurant.component';
 import { AddRestaurantComponent } from './add-restaurant/add-restaurant.component';
 import { EditRestaurantComponent } from './edit-restaurant/edit-restaurant.component';
+import { ROUTES } from '@core/routes.constants';
 
 const routes: Routes = [
   {
@@ -10,11 +12,11 @@ const routes: Routes = [
     component: RestaurantComponent,
   },
   {
-    path: 'add',
+    path: ROUTES.RESTAURANT.ADD,
     component: AddRestaurantComponent,
   },
   {
-    path: 'edit/:id',
+    path: ROUTES.RESTAURANT.EDIT + '/:id',
     component: EditRestaurantComponent,
   },
 ];

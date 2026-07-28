@@ -1,11 +1,11 @@
 <header class="header">
-  <a routerLink="/dashboard" class="header__app-logo">
+  <a [routerLink]="dashboardUrl" class="header__app-logo">
     <img src="assets/images/app-logo.svg" alt="RMS" />
   </a>
 
   <a
     *ngIf="!userLoggedIn"
-    routerLink="/dashboard"
+    [routerLink]="dashboardUrl"
     class="header__app-logo-sm-devices"
   >
     <img src="assets/images/app-logo.svg" alt="RMS" />

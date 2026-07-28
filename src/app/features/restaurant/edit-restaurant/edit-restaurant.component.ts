@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RestaurantService } from '@src/app/core/services/restaurant/restaurant.service';
 import { Restaurants } from '@src/app/core/models/restaurant.model';
+import { ROUTES } from '@core/routes.constants';
 
 @Component({
   selector: 'app-edit-restaurant',
@@ -11,6 +12,7 @@ import { Restaurants } from '@src/app/core/models/restaurant.model';
 export class EditRestaurantComponent implements OnInit {
   id!: string;
   restaurant!: Restaurants | null;
+  restaurantUrl = ROUTES.RESTAURANT.RESTAURANTS;
 
   constructor(
     private route: ActivatedRoute,

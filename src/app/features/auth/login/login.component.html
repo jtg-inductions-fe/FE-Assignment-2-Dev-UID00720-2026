@@ -57,7 +57,13 @@
         color="primary"
         class="login__btn"
       >
-        Login
+        <ng-container *ngIf="!loading">Login</ng-container>
+        <mat-spinner
+          *ngIf="loading"
+          color="accent"
+          diameter="20"
+          class="loading-spinner"
+        ></mat-spinner>
       </button>
     </form>
   </mat-card-content>
