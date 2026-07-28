@@ -2,7 +2,8 @@
 @use 'abstracts/variables' as v;
 
 .statistics {
-  width: f.px-to-rem(370);
+  min-width: f.px-to-rem(210);
+  width: 100%;
   height: f.px-to-rem(72);
   border: 1px solid v.$grey;
   border-radius: 12px;
@@ -10,7 +11,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: f.px-to-rem(5);
 
   &__icon {
     width: f.px-to-rem(44);

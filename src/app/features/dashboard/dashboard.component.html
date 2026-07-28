@@ -25,6 +25,7 @@
   <div class="dashboard__statistics">
     <app-statistics
       *ngFor="let item of statisticsData"
+      class="stat-card"
       [dataName]="item.dataName"
       [dataValue]="item.dataValue"
       [dataIcon]="item.dataIcon"

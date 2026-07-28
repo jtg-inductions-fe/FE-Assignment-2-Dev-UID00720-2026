@@ -93,9 +93,6 @@ export class RestaurantFormComponent implements OnInit {
     }
   }
 
-  // Then in ngOnInit:
-  // this.prefillEmails(this.restaurant?.ownersEmail);
-
   // Submit Handler
   onSubmit() {
     if (this.restaurantForm.valid) {
